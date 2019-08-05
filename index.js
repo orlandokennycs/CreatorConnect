@@ -5,6 +5,7 @@
 const path = require('path');
 const express = require('express');
 const app = express();
+const config = require("./config.json")
 
 // Express Configuration
 app.set('view engine', 'pug');
@@ -16,7 +17,7 @@ app.use(express.static('public'));
 const MongoClient = require('mongodb').MongoClient
 
 // Main Connect
-MongoClient.connect('mongodb+srv://USERNAME:PASSWORD@cluster0-q86na.mongodb.net/test?retryWrites=true&w=majority', (err, db) => {
+MongoClient.connect(config.uri, (err, db) => {
  if (err) return console.log(err)
  var dbase = db.db("CreatorConnect");
 
