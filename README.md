@@ -7,6 +7,6 @@ CreatorConnect is a program provided by the Florida State University Innovation 
 
 Currently, we are working to develop an end product for the service. We are creating a web application where all data is collected and processed in-house. We expect to release the web application to the public in January 2020.
 
-[Prototype Presentation]: https://docs.google.com/presentation/d/1S5ocCvF5zaE6Ujqz5a6FAUTMNR_FeDn7O3GFXEsLO5o/edit?usp=sharing 
+Prototype Presentation: https://docs.google.com/presentation/d/1S5ocCvF5zaE6Ujqz5a6FAUTMNR_FeDn7O3GFXEsLO5o/edit?usp=sharing 
 
 
