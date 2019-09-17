@@ -1,6 +1,7 @@
 import configparser
 from flask import Flask
 from flask_pymongo import PyMongo
+from response import Response
 
 # Read Config
 config = configparser.ConfigParser()
@@ -12,4 +13,4 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    return 'This is a Test!'
+    return Response(200, {}).__dict__
