@@ -9,6 +9,17 @@ To connect Flask to your MongoDB instance, place your MongoDB URI in `config.ini
 uri = mongodb://<username>:<password>@<url>:<port>/test
 ```
 
+To run the server, You'll need to set some environment variables.
+
+```
+$ cd CreatorConnect/api/
+$ pip install -r requirements.txt
+$ export set FLASK_ENV=development
+$ export set FLASK_APP=hello.py
+```
+
+Now, run the server using `flask run`!
+
 ## Documentation
 
 All documentation for the API will be located in `docs/`. 

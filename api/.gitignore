@@ -37,3 +37,6 @@ instance/
 
 # Config File
 config.ini
+
+#vscode
+.vscode/
