@@ -3,7 +3,6 @@ import configparser
 from bson import json_util
 from flask import Flask
 from flask_pymongo import PyMongo
-from response import Response
 
 # Read Config
 config = configparser.ConfigParser()
@@ -16,15 +15,6 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = config['MongoDB']['URI']
 mongo = PyMongo(app)
 
-# Start Routes
-@app.route('/')
-def index():
-    return Response(200, {}).serialize()
-
-@app.route('/users')
-def listUsers():
-    # Search for first 10 users and typecast to list
-    users = list(mongo.db.users.find({}).limit(10))
-
-    # Return new response object formatted with users
-    return Response(200, users).serialize()
+# Now that app is initialized, import other paths
+# Import all get requests
+import api_gets
