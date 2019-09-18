@@ -18,7 +18,7 @@ class Response:
         self.errorData = args[0] if len(args)>0 else {}
 
     def serialize(self):
-        return json_util.dumps(self.__dict__)
+        return json_util.dumps(self.__dict__), {'Content-Type': 'application/json; charset=utf-8'}
 
 def getResponseData(code):
     # Dict containing all possible response codes
