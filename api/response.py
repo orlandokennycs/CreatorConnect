@@ -1,3 +1,5 @@
+from bson import json_util
+
 class Response:
     def __init__(self, code, data, *args):
         # An HTTP Response code
@@ -9,10 +11,14 @@ class Response:
         self.message = getResponseData(code)['message']
 
         # Pass thru data from constructor.
+        #print("data = ", data)
         self.data = data
 
         # Pass thru optional errorData dict, to help describe an error.
         self.errorData = args[0] if len(args)>0 else {}
+
+    def serialize(self):
+        return json_util.dumps(self.__dict__)
 
 def getResponseData(code):
     # Dict containing all possible response codes
