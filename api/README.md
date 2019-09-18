@@ -2,6 +2,26 @@
 
 Welcome to the CreatorConnect API, coded using Flask and MongoDB!
 
+To connect Flask to your MongoDB instance, place your MongoDB URI in `config.ini` in section "MongoDB" under key "uri".
+
+```
+[MongoDB]
+uri = mongodb://<username>:<password>@<url>:<port>/test
+```
+
+To run the server, You'll need to set some environment variables.
+
+```
+$ cd CreatorConnect/api/
+$ pip install -r requirements.txt
+$ export FLASK_ENV=development
+$ export FLASK_APP=hello.py
+```
+
+*Note: on Windows, use `set` instead of `export`. Also, you may need to re-run the export commands every time you run the app in a new terminal instance.*
+
+Now, run the server using `flask run`!
+
 ## Documentation
 
 All documentation for the API will be located in `docs/`. 
