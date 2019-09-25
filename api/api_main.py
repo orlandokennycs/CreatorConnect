@@ -5,6 +5,7 @@ from bson import json_util
 from flask import Flask
 from flask_pymongo import PyMongo
 from pymongo.errors import ConfigurationError, OperationFailure
+from flask_cors import CORS as cors
 
 # Read Config
 config = configparser.ConfigParser()
@@ -12,6 +13,7 @@ config.read('config.ini')
 
 # Init Flask App
 app = Flask(__name__)
+cors(app)
 
 # Init MongoDB Connection and run sample query to test authentication
 app.config["MONGO_URI"] = config['MongoDB']['URI']
