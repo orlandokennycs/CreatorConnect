@@ -14,11 +14,8 @@ To run the server, You'll need to set some environment variables.
 ```
 $ cd CreatorConnect/api/
 $ pip install -r requirements.txt
-$ export FLASK_ENV=development
-$ export FLASK_APP=hello.py
+$ python run_server.py
 ```
-
-*Note: on Windows, use `set` instead of `export`. Also, you may need to re-run the export commands every time you run the app in a new terminal instance.*
 
 Now, run the server using `flask run`!
 
