@@ -29,3 +29,29 @@ def listRandomUsers():
 
     # Return new response object formatted with users
     return Response(200, users).serialize()
+
+# /getUser/<username>
+@app.route('/getUser/<string:username>')
+def searchByUsername(username):
+    # Returns user specified object
+    users = list(mongo.db.users.find({"fsu_id" : username}))
+
+    return Response(200, users).serialize()
+
+# /getbyGradDate/<year>
+@app.route('/getbyGradDate/<int:year>')
+def listByGradDate(year):
+    # Returns array of 3 users with specified grad date
+    users = list(mongo.db.users.find({"grad_date" : year}).limit(3))
+    return Response(200, users).serialize()
+
+# /getByGradDate/<year>/<count>
+@app.route('/getByGradDate/<int:year>/<int:count>')
+def chooseCountGradDate(year, count):
+    # Returns array of specified amount of users with specified grad date
+    users = list(mongo.db.users.find({"grad_date" : year}).limit(count))
+    return Response(200, users).serialize()
+
+# ideas
+# /getByGradRange
+# /getBySkills
