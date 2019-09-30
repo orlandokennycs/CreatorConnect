@@ -38,8 +38,8 @@ def searchByUsername(username):
 
     return Response(200, users).serialize()
 
-# /getbyGradDate/<year>
-@app.route('/getbyGradDate/<int:year>')
+# /getByGradDate/<year>
+@app.route('/getByGradDate/<int:year>')
 def listByGradDate(year):
     # Returns array of 3 users with specified grad date
     users = list(mongo.db.users.find({"grad_date" : year}).limit(3))
