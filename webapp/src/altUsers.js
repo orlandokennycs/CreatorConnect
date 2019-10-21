@@ -3,6 +3,7 @@ import { numberTypeAnnotation } from 'babel-types';
 
 //res.header('Access-Control-Allow-Origin', "*")
 class AltUsers extends React.Component {
+  
   constructor() {
     super();
     this.state = {
@@ -10,141 +11,37 @@ class AltUsers extends React.Component {
     };
   }
 
-
   componentDidMount() {
-    fetch('http://127.0.0.1:5000/randUsers')
+    fetch('http://127.0.0.1:5000/allUsers')
     .then(results => results.json())
     .then(response => {
       this.setState({data: response.data})
     })
-
-  /*
-  componentDidMount() {
-    fetch('http://127.0.0.1:5000/randUsers')
-    .then(results => results.json())
-    .then(foobar => {
-      var users = [];
-      foobar.data.map((user) => {
-        users.push(user.name)
-      })
-
-      var fsuIds = [];
-      foobar.data.map((user) => {
-        fsuIds.push(user.fsu_id)
-      })
-
-      this.setState({names: users, ids: fsuIds})
-    })
-    */
-
-
-     /* .then(res => {
-        var users = [];
-        var fullNames = [];
-        res.data.map((user) => {
-          fullNames.push(user.name)
-        })
-        res.data.map((user) => {
-          users.push(fullNames)
-        })
-        this.setState({names: fullNames})
-      })
-
-      foobar.names
-      */
-    
   }
-
-
-  /*
-  render(){
-    this.state.foobar.map((user) => {
-      return
-    })
-  }
-*/
   
   render() {
-    console.log(this.state)
+    const userCount = this.state.data.map((user) => console.log("")).length;
+    console.log(userCount)
+    window.count=userCount
+
     return(
-      this.state.data.map((user) => {
+      this.state.data.map((user, i) => {
         return(
-        <div class="container">
-        <div class="card firstUsers" id="searchUsers" >
-              <h1 class="name">{user.name}</h1>
-              <p class="email">{user.email}</p>
-              <p class="skillsHead">skills </p>
-              <ul class="skillsArr">
+        <div className="card firstUsers" id={"searchUsers" + i} key={i}>
+              <h1 className="name">{user.name}</h1>
+              <p className="email">{user.email}</p>
+              <p className="skillsHead">skills </p>
+              <ul className="skillsArr">
               {
-                user.skills.map((skill) => {
-                  return(
-                    <li><p>{skill}</p></li>
-                  )
+                user.skills.map((skill, j) => {
+                  return(<li key={j}><p>{skill}</p></li>)
                 })
               }
               </ul>
-          </div>
         </div>
         )
-      })
-
-      
-    )
-    
-    
+      })  
+    ) 
   }
-  
-    /*
-    return(
-        <div class="container">
-        <div class="card firstUsers" id="searchUsers" key={this.state.names.toString()}>
-              <h1 class="name" names={this.state.names}>
-                {this.state.names}
-                {console.log(this.state.names)}</h1>
-              <p class="email"></p>
-  
-          </div>
-        </div>
-        ) */
-
-/*
-componentDidMount() {
-  fetch('http://127.0.0.1:5000/randUsers')
-  .then(results => {
-    return results.json();
-  }).then(res => {
-    var users = [];
-    var fullNames = [];
-    res.data.map((user) => {
-      fullNames.push(user.name)
-    })
-    res.data.map((user) => {
-      users.push(fullNames)
-    })
-    this.setState({names: fullNames})
-  })
-  
-}
-
-render() {
-  return(
-    this.state.names.map((names) => {
-      return(
-      <div class="container">
-      <div class="card firstUsers" id="searchUsers" key={names.toString()}>
-            <h1 class="name">{names}</h1>
-            <p class="email"></p>
-
-        </div>
-      </div>
-      )
-    })
-  )
-  
-}
-*/
-
-
-
 }
 export default AltUsers
