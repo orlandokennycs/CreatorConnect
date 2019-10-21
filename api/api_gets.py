@@ -15,6 +15,17 @@ def listUsers():
     # Return new response object formatted with users
     return Response(200, users).serialize()
 
+# /allUsers
+@app.route('/allUsers')
+def listAllUsers():
+    # Search for all users and typecast to list
+    # NOTE- this is specifically used to test CSS/JS features with the frontend team. 
+    users = list(mongo.db.users.find({}))
+
+    # Return new response object formatted with users
+    return Response(200, users).serialize()
+
+
 # /users/<count>
 @app.route('/users/<int:count>')
 def listUserCount(count):
