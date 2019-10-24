@@ -131,4 +131,29 @@ ul{
 /*Defines "show" attribute for search bar functionality*/
 .show {display: block;}
 
+.login {
 
+  margin-left: 3.5vw;
+  margin-right: 2vw;
+  line-height: 2.3vw;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  color: #EAE3D1;
+}
+
+.loginbox{
+  border-radius: 0.694vw;
+  box-shadow: 0 0.278vw 0.556vw 0 rgba(0, 0, 0, 0.2);
+  width: 25%;
+  height: 5%;
+  max-width: 27.778vw;
+  max-height: 34.722vw;
+  margin-left: 35vw;
+  margin-right: 35vw;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  padding-top: 1.2vw;
+  padding-bottom: 1.2vw;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+
+}
