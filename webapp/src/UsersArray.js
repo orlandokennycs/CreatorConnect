@@ -1,8 +1,9 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import { numberTypeAnnotation } from 'babel-types';
+import './CreatorConnect.css';
 
-//res.header('Access-Control-Allow-Origin', "*")
-class AltUsers extends React.Component {
+class UsersArray extends React.Component {
   
   constructor() {
     super();
@@ -19,11 +20,11 @@ class AltUsers extends React.Component {
     })
   }
   
+  
   render() {
     const userCount = this.state.data.map((user) => console.log("")).length;
     console.log(userCount)
     window.count=userCount
-
     return(
       this.state.data.map((user, i) => {
         return(
@@ -44,4 +45,4 @@ class AltUsers extends React.Component {
     ) 
   }
 }
-export default AltUsers
+export default UsersArray

@@ -34,53 +34,15 @@
     <title>CreatorConnect (REACT)</title>
   </head>
   <body>
+    <div id ="root"></div>
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <!DOCTYPE html>
 
-
-
-    <h2><span style="font-size:1.5em;">C</span>reator<span style="font-size:1.5em;">C</span>onnect</h2>
-    <div class="parent">
-        <div class="searchBar"><input id="myInput" type="text" onkeyup="searchBar()" placeholder="Search through names and skills..."></div>
-    </div>
-
-
-    <div class="cards-container" id = "test">
-      <div id="root"></div>
+    <div class="cards-container" id = "users">
     </div>
   
-    <script>
-      function searchBar() 
-      {
-        console.log(window.count)
-        var input, filter;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        searchResults = []
-        userText = []
-        for(i = 0; i < window.count; i++)
-        {
-          div = document.getElementById("searchUsers" + i);
-          userText.push(div.innerText)
-        } 
-        for(i = 0; i < window.count; i++)
-        {
-          searchResults = []
-          if (userText[i].toUpperCase().indexOf(filter) > -1) 
-          {
-            div = document.getElementById("searchUsers" + i)
-            searchResults.push(div)
-            div.style.display = ""
-          } 
-          else 
-          {
-            div = document.getElementById("searchUsers" + i);
-            div.style.display = "none";
-          }
-        }
-      }
-    </script>
+    
       
   </body>
 </html>
