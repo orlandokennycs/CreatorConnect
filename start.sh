@@ -5,4 +5,4 @@
 cd api
 export FLASK_ENV=development
 export FLASK_APP=api_main.py
-flask run
+flask run --host 0.0.0.0 --post 80
