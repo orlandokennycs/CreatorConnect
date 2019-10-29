@@ -1,6 +1,6 @@
 name: Update Server
 
-on: [push]
+on:
  push:
    branches:    
      - develop  # Push events on develop branch
