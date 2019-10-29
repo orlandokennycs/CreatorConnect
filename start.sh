@@ -12,8 +12,11 @@ echo "IF YOU'RE GETTING ERRORS RUNNING THIS ON YOUR RIG, YOU HAVE BEEN WARNED"
 CERT_FILE=/etc/letsencrypt/live/canipleasegetsome.space/cert.pem
 KEY_FILE=/etc/letsencrypt/live/canipleasegetsome.space/privkey.pem
 
+# prepare logging
+LOGFILE=server.log
+echo Server started at $(date +"%H:%M:%S on %m-%d-%Y.") > $LOGFILE
+
 # other variables we'll want
-LOGFILE=../logs/$(date +"%H-%M.%m-%d-%Y").server.log
 SESSIONNAME=flaskServer
 HOST=0.0.0.0
 PORT=80 #443
@@ -24,10 +27,13 @@ export FLASK_ENV=development
 export FLASK_APP=api_main.py
 
 # Set up virtualization
-tmux has-session -t $SESSIONNAME 2>/dev/null
+tmux ls | grep -Fx $SESSIONNAME
 if [ $? != 0 ]; then
-  tmux kill-session -t $SESSIONNAME
+    echo "Existing session found! Killing..."
+    tmux kill-session -t $SESSIONNAME
 fi
 
 # run server
+echo "Starting new server instance..."
 tmux new-session -d -s $SESSIONNAME flask run --host $HOST --port $PORT > $LOGFILE
+echo "Server started! Visit the page to run a test!"
