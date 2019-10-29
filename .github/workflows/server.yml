@@ -1,0 +1,22 @@
+name: Update Server
+
+on: [push]
+ push:
+   branches:    
+     - develop  # Push events on develop branch
+     - f/ci     # Push events on the test branch
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: SSH into server and run script
+      uses: maddox/actions/ssh@master
+      with:
+        args: cd CreatorConnect && git pull && ./start.sh
+      env:
+        PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+        HOST:  ${{ secrets.HOST }}
+        USER:  ${{ secrets.USER }}
