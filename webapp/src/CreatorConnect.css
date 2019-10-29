@@ -2,8 +2,25 @@
 
 /*Garnet Background*/
 body {
+  /*
   background-repeat: no-repeat;
   background-color: #5F2D38;
+  */
+  background-image: url('https://i.imgur.com/FmyiR9X.gif');
+
+  background-size: cover;
+
+  
+
+  
+
+  
+
+  height: 100vh;
+
+  padding:0;
+
+  margin:0;
 }
 
 /*PlaceHolder text inside search bar*/
@@ -156,4 +173,37 @@ ul{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 
+}
+
+/*Wraps button*/
+.buttonWrapper {
+  text-align: center;
+  margin-top: 6.5vw;
+  
+}
+/*CSS Buttons for launch page*/
+.customButton 
+{
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  border-radius: 0.694vw;
+  background-color: #EAE3D1;
+  border: none;
+  color: #5F2D38;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 3vw;
+  width: 16.771vw;
+  height: 7.083vw; 
+}
+
+.customButton:hover
+{
+  color: #EAE3D1;
+  background-color: #5F2D38;
+  
 }

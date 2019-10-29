@@ -17,11 +17,10 @@ const routing = (
       <Route path="/launch" component={Launch}/>
       <Route path="/signUp" component={SignUp}/>
       <Route path="/login" component={Login} />
-      <Route path="/home" component={UsersArray}/>
+      <Route path="/cards" component={UsersArray}/>
   </Router>
 )
 
-console.log(window.location.pathname == "/home");
 
 
 //the code below reads the path and renders component on a conditional basis. i.e. /home throws two different components at different places...
@@ -37,7 +36,7 @@ else if(window.location.pathname == "/login")
 {
   ReactDOM.render(routing, document.getElementById("root"));
 }
-else if(window.location.pathname == "/home")
+else if(window.location.pathname == "/cards")
 {
   ReactDOM.render(<Home/>, document.getElementById("root"));  
   ReactDOM.render(routing, document.getElementById("users"));
