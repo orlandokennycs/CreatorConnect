@@ -1,12 +1,12 @@
+# Main CI script for Github Actions
 name: Server Test/Push
 
-on:
- push:
-   branches:    
-     - develop    # Push events on develop branch
-     - f/testing  # Push events on the testing branch
+# Test all branches on push/PR
+on: [push, pull_request]
 
+# Jobs
 jobs:
+  # Test suite for Flask API
   Test-API:
     name: Test API
     runs-on: ubuntu-latest
@@ -27,6 +27,7 @@ jobs:
       env:
         MONGO_URI: ${{ secrets.MONGO_URI }}
 
+  # Job that pushes code to server upon successful tests
   SSH:
     if: github.ref == 'refs/heads/develop' # only run on develop
     runs-on: ubuntu-latest
