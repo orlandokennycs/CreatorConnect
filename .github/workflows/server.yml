@@ -3,14 +3,32 @@ name: Update Server
 on:
  push:
    branches:    
-     - develop  # Push events on develop branch
-     - f/ci     # Push events on the test branch
+     - develop    # Push events on develop branch
+     - f/testing  # Push events on the testing branch
 
 jobs:
-  build:
-
+  Test-API:
+    name: Test API
     runs-on: ubuntu-latest
+    steps:
+    - name: Set up workspace
+      uses: actions/checkout@v1
+    - name: Install Python
+      uses: actions/setup-python@v1
+      with: 
+        python-version: '3.x'
+        architecture: 'x64'
+    - name: Install packages
+      working-directory: ./api
+      run: pip install -r requirements.txt
+    - name: Test API Code
+      working-directory: ./api
+      run: pytest
 
+  SSH:
+    if: github.ref == 'refs/heads/develop' # only run on develop
+    runs-on: ubuntu-latest
+    needs: Test-API
     steps:
     - name: SSH into server and run script
       uses: maddox/actions/ssh@master
