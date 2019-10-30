@@ -35,6 +35,9 @@ pip-delete-this-directory.txt
 instance/
 .webassets-cache
 
+# Testing Stuff
+.pytest_cache/
+
 # Config File
 config.ini
 

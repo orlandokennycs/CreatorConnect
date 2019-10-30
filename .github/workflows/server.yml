@@ -1,16 +1,37 @@
-name: Update Server
+# Main CI script for Github Actions
+name: Server Test/Push
 
-on:
- push:
-   branches:    
-     - develop  # Push events on develop branch
-     - f/ci     # Push events on the test branch
+# Test all branches on push/PR
+on: [push, pull_request]
 
+# Jobs
 jobs:
-  build:
-
+  # Test suite for Flask API
+  Test-API:
+    name: Test API
     runs-on: ubuntu-latest
+    steps:
+    - name: Set up workspace
+      uses: actions/checkout@v1
+    - name: Install Python
+      uses: actions/setup-python@v1
+      with: 
+        python-version: '3.x'
+        architecture: 'x64'
+    - name: Install packages
+      working-directory: ./api
+      run: pip install -r requirements.txt
+    - name: Test API Code
+      working-directory: ./api
+      run: pytest
+      env:
+        MONGO_URI: ${{ secrets.MONGO_URI }}
 
+  # Job that pushes code to server upon successful tests
+  SSH:
+    if: github.ref == 'refs/heads/develop' # only run on develop
+    runs-on: ubuntu-latest
+    needs: Test-API
     steps:
     - name: SSH into server and run script
       uses: maddox/actions/ssh@master
