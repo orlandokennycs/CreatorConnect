@@ -1,15 +1,24 @@
 import sys
 import json
 import configparser
-from bson import json_util
+from os import environ
 from flask import Flask
+from bson import json_util
 from flask_pymongo import PyMongo
-from pymongo.errors import ConfigurationError, OperationFailure
 from flask_cors import CORS as cors
+from pymongo.errors import ConfigurationError, OperationFailure
 
-# Read Config
+# Get config
 config = configparser.ConfigParser()
-config.read('config.ini')
+if environ.get('GITHUB_WORKFLOW') is not None:
+    # Make config.ini if on github
+    config['MongoDB'] = {}
+    config['MongoDB']['URI'] = environ['MONGO_URI']
+    with open('config.ini', 'w') as configfile:
+        config.write(configfile)
+else:
+    # else, read form config.ini
+    config.read('config.ini')
 
 # Init Flask App
 app = Flask(__name__)

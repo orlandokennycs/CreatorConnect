@@ -1,4 +1,4 @@
-name: Update Server
+name: Server Test/Push
 
 on:
  push:
@@ -24,6 +24,8 @@ jobs:
     - name: Test API Code
       working-directory: ./api
       run: pytest
+      env:
+        MONGO_URI: ${{ secrets.MONGO_URI }}
 
   SSH:
     if: github.ref == 'refs/heads/develop' # only run on develop
