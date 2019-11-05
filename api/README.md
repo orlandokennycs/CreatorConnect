@@ -25,4 +25,4 @@ All documentation for the API will be located in `docs/`.
 
 ## Contributing
 
-We follow the smae contributing guidelines as the main project! See our [CONTRIBUTING.md](https://github.com/FSUInnovationHub/CreatorConnect/blob/develop/CONTRIBUTING.md) for details on how to help out.
+We follow the same contributing guidelines as the main project! See our [CONTRIBUTING.md](https://github.com/FSUInnovationHub/CreatorConnect/blob/develop/CONTRIBUTING.md) for details on how to help out.
