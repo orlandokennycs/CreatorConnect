@@ -2,25 +2,26 @@
 
 /*Garnet Background*/
 body {
-  /*
+
   background-repeat: no-repeat;
   background-color: #5F2D38;
-  */
-  background-image: url('https://i.imgur.com/FmyiR9X.gif');
+
+  /*background-image: url('https://i.imgur.com/FmyiR9X.gif');
 
   background-size: cover;
 
-  
 
-  
 
-  
+
+
+
 
   height: 100vh;
 
   padding:0;
 
   margin:0;
+  */
 }
 
 /*PlaceHolder text inside search bar*/
@@ -175,14 +176,72 @@ ul{
 
 }
 
+.signup {
+  /*margin-left: 3.5vw;
+  margin-right: 2vw;
+  */
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  line-height: 2.3vw;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-size: 25px;
+  color: #EAE3D1;
+
+}
+
+.signupbox{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 10%;
+  border-radius: 0.45vw;
+  margin-bottom: 1vw;
+  margin-top: .2vw;
+  height: 2vw;
+}
+
+.legend{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  line-height: 2.3vw;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-size: 25px;
+  color: #EAE3D1;
+}
+
+.skills
+{
+
+}
+
+#parent {
+  display: flex;
+}
+#narrow {
+  float:right;
+  width: 200px;
+
+  /* Just so it's visible */
+}
+#wide {
+  width: 200px;
+  /* Grow to rest of container */
+
+  /* Just so it's visible */
+}
+
 /*Wraps button*/
 .buttonWrapper {
   text-align: center;
   margin-top: 6.5vw;
-  
+
 }
 /*CSS Buttons for launch page*/
-.customButton 
+.customButton
 {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   border-radius: 0.694vw;
@@ -198,12 +257,12 @@ ul{
   display: inline-block;
   font-size: 3vw;
   width: 16.771vw;
-  height: 7.083vw; 
+  height: 7.083vw;
 }
 
 .customButton:hover
 {
   color: #EAE3D1;
   background-color: #5F2D38;
-  
+
 }
