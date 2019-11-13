@@ -18,26 +18,32 @@ class SignUp extends React.Component {
             </div>
 
             <div>
+
                 <input type="text" name="username" class="signupbox" placeholder="Username"></input>
             </div>
 
             <div>
+
                 <input type="password" name="password" class="signupbox" placeholder="Password"></input>
             </div>
 
             <div>
+
                 <input type="password" name="verify" class="signupbox" placeholder="Verify Password"></input>
             </div>
 
             <div>
+
                 <input type="text" name="fsuid" class="signupbox" placeholder="FSU ID"></input>
             </div>
 
             <div>
+
                 <input type="text" name="email" class="signupbox" placeholder="Email"></input>
             </div>
 
             <div>
+
                 <input type="text" name="gradyear" class="signupbox" placeholder="Grad Year"></input>
             </div>
 
