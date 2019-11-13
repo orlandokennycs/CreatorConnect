@@ -8,49 +8,50 @@ import './CreatorConnect.css';
 //NOTE- YOUR HTML CODE NEEDS TO BE AT WRAPPED AROUND A DIV OBJECT.
 
 class SignUp extends React.Component {
-  render() { 
+  render() {
     return (
       <div>{/* DO NOT REMOVE THIS DIV COMPONENT*/}
        <h1>Signup</h1>
         <form action="" method="POST">
             <div>
-                <label for='name'>Name: </label>
-                <input type="text" name="name"></input>
+                <input type="text" name="name" class="signupbox" placeholder="Name"></input>
             </div>
+
             <div>
-                <label for='username'>Username: </label>
-                <input type="text" name="username"></input>
+                <input type="text" name="username" class="signupbox" placeholder="Username"></input>
             </div>
+
             <div>
-                <label for='password'>Password: </label>
-                <input type="password" name="password"></input>
+                <input type="password" name="password" class="signupbox" placeholder="Password"></input>
             </div>
+
             <div>
-                <label for='verify'>Verify password: </label>
-                <input type="password" name="verify"></input>
+                <input type="password" name="verify" class="signupbox" placeholder="Verify Password"></input>
             </div>
+
             <div>
-                <label for='fsuid'>FSU ID: </label>
-                <input type="text" name="fsuid"></input>
+                <input type="text" name="fsuid" class="signupbox" placeholder="FSU ID"></input>
             </div>
+
             <div>
-                <label for='email'>Email: </label>
-                <input type="text" name="email"></input>
+                <input type="text" name="email" class="signupbox" placeholder="Email"></input>
             </div>
+
             <div>
-                <label for='gradyear'>Grad Year: </label>
-                <input type="text" name="gradyear"></input>
+                <input type="text" name="gradyear" class="signupbox" placeholder="Grad Year"></input>
             </div>
+
             <fieldset>
-                <legend>Choose your skills</legend>
-                <div>
+                <label for='legend' class="legend">Choose Your Skill </label>
+                <div id="parent">
+                  <div id="wide">
                     <label for='electrical'>Electrical Circuits: </label>
                     <input type="checkbox" id="electrical" name="skills" value="Electrical Circuits"></input>
-                </div>
-                <div>
+                  </div>
+                  <div id="narrow">
                     <label for='lazer'>Laser Cutting: </label>
                     <input type="checkbox" id="lazer" name="skills" value="Laser Cutting"></input>
-                </div>
+                    </div>
                 <div>
                     <label for='brand'>Brand Development: </label>
                     <input type="checkbox" id="brand" name="skills" value="Brand Development"></input>
@@ -59,6 +60,7 @@ class SignUp extends React.Component {
                     <label for='graphic'>Graphic Design: </label>
                     <input type="checkbox" id="graphic" name="skills" value="Graphic Design"></input>
                 </div>
+            </div>
             </fieldset>
             <hr></hr>
             <button type="submit">Submit!</button>
