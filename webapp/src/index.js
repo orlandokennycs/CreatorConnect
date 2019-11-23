@@ -7,8 +7,6 @@ import {render} from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import Home from './Home';
 import UsersArray from './UsersArray';
-import SignUp from './SignUp';
-import Login from './Login';
 import Launch from './Launch'
 //import "@fortawesome/fontawesome-free/css/all.min.css";
 //import "bootstrap-css-only/css/bootstrap.min.css";
@@ -23,33 +21,11 @@ document.head.appendChild(styleLink);*/
 const routing = (
   <Router>
       <Route path="/launch" component={Launch}/>
-      <Route path="/signUp" component={SignUp}/>
-      <Route path="/login" component={Login} />
-      <Route path="/cards" component={UsersArray}/>
+      <Route path="/cards" component={Home}/>
   </Router>
 )
-
-
-
 //the code below reads the path and renders component on a conditional basis. i.e. /home throws two different components at different places...
-if(window.location.pathname == "/launch")
-{
-  ReactDOM.render(routing, document.getElementById("root"));
-}
-else if(window.location.pathname == "/signUp")
-{
-  ReactDOM.render(routing, document.getElementById("root"));
-}
-else if(window.location.pathname == "/login")
-{
-  ReactDOM.render(routing, document.getElementById("root"));
-}
-else if(window.location.pathname == "/cards")
-{
-  ReactDOM.render(<Home/>, document.getElementById("root"));  
-  ReactDOM.render(routing, document.getElementById("users"));
-}
-
+ReactDOM.render(routing, document.getElementById("root"));
 
 //ReactDOM.render(routing, document.getElementById('cards'));
 

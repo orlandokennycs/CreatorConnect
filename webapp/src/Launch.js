@@ -16,6 +16,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Select from '@material-ui/core/Select';
 import Checkbox from '@material-ui/core/Checkbox';
 import Chip from '@material-ui/core/Chip';
+import { bool } from 'prop-types';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -67,10 +68,10 @@ const names = [
   'Web Development',
 ];
 
-function getStyles(name, personName, theme) {
+function getStyles(name, skill, theme) {
   return {
     fontWeight:
-      personName.indexOf(name) === -1
+      skill.indexOf(name) === -1
         ? theme.typography.fontWeightRegular
         : theme.typography.fontWeightMedium,
   };
@@ -120,97 +121,35 @@ class Launch extends React.Component {
     selected: [],
     shown: true,
   }
-  
-  
-  
-
-  render() { 
-    const {selected} = this.state;
-    return (
-      <div>{/* DO NOT REMOVE THIS DIV COMPONENT*/}
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
-      <div className ="bothDivs">
-        <div className = "leftDiv">
-          <img img src="/images/logo.png" alt="hub logo" className = "hubLogo"></img>
-        </div>
-        <div className = "rightDiv">
-          <div className = "signUpOrIn">
-            <div className = "CreatorConnectLogo">
-              <h4><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect</h4>
-              <div className="informationWrap">
-              <div className = "information">
-              <form action="" method="POST">
-                
-                  <input className="inputBox" type="text" name="firstName" placeholder="First Name"></input>
-                
-                  <input className="inputBox" type="text" name="lastName" placeholder="Last Name"></input>
-                
-                  <input className="inputBox" type="text" name="fsuEmail" placeholder="FSU e-mail"></input>
-             
-                  <input className="inputBox" type="password" name="password" placeholder="Password"></input>
-                
-                  <input className="inputBox" type="password" name="verify" placeholder="Verify Password"></input>
-                
-                  <input className="inputBox" type="text" name="gradyear" placeholder="Grad Year"></input>
-                
-                  <div className="inputBox">
-                    <select placeholder="Skill">
-                      <option default>Skill #1</option>
-                      <option value="App Development">App Development</option>
-                      <option value="Electrical Circuits">Electrical Circuits</option>
-                      <option value="Laser Cutting">Laser Cutting</option>
-                      <option value="Computer Programming">Computer Programming</option>
-                      <option value="3D Design">3D Design</option>
-                      <option value="Brand Development">Brand Development</option>
-                      <option value="Design Thinking">Design Thinking</option>
-                      <option value="Digital Fabrication/3D Printing">Digital Fabrication/3D Printing</option>
-                      <option value="Social Entrepreneurship">Social Entrepreneurship</option>
-                      <option value="Entrepreneurship">Entrepreneurship</option>
-                      <option value="Game/VR Design">Game/VR Design</option>
-                      <option value="Graphic Design">Graphic Design</option>
-                      <option value="Digital Photography">Digital Photography</option>
-                      <option value="User Experience (UX) Design">User Experience (UX) Design</option>
-                      <option value="Social Media Marketing">Social Media Marketing</option>
-                      <option value="Video Production">Video Production</option>
-                      <option value="Web Design">Web Design</option>
-                      <option value="Web Development">Web Development</option>  
-                    </select>
-                  </div>
-                  
-            <button className="inputBox" type="submit">Submit!</button>
-            <button className="inputBox" >Existing User? Click Here</button>
-        </form>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-         {/*<h2><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect</h2>
-
-        <div className = "buttonWrapper">
-          <Link to="/signUp">
-            <button type="button" className="customButton">Sign Up</button>
-          </Link>
-        </div>
-        <div className = "buttonWrapper">
-          <Link to="/login">
-            <button type="button" className="customButton">Login</button>
-          </Link>
-    </div>*/}
-      {/* DO NOT REMOVE THIS DIV COMPONENT*/}</div>
-      )
-  }
 }
 export default function MultipleSelect() {
-  const [showLogin, setLogin] = useState(true);
+  const existingUser = "Existing User? Click here"
+  const newUser = "New User? Click Here"
+  const boolArray = [true, false]
+  const [registration, hideRegistration] = useState(boolArray[0]);
+  const [login, setLogin] = useState(boolArray[1]);
+  const [button, setButton] = useState(existingUser);
   const classes = useStyles();
   const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
+  const [skill, setSkill] = React.useState([]);
 
   const handleChange = event => {
-    setPersonName(event.target.value);
+    setSkill(event.target.value);
   };
+
+  function triggerRegistration() {hideRegistration(!registration)}
+  function triggerLogin() {setLogin(!login)}
+  function triggerButton() {
+    if(button == existingUser)
+    {
+      setButton(newUser)
+      
+    }
+    else
+    {
+      setButton(existingUser)
+    }
+  }
 
   const handleChangeMultiple = event => {
     const { options } = event.target;
@@ -220,7 +159,7 @@ export default function MultipleSelect() {
         value.push(options[i].value);
       }
     }
-    setPersonName(value);
+    setSkill(value);
   };
 
   return (
@@ -237,7 +176,7 @@ export default function MultipleSelect() {
               <div className="informationWrap">
               <div className = "information">
               
-              {showLogin && <form action="" method="POST">
+              {registration && <form action="" method="POST">
                   <input className="inputBox" type="text" name="firstName" placeholder="First Name"></input>
                 
                   <input className="inputBox" type="text" name="lastName" placeholder="Last Name"></input>
@@ -253,11 +192,11 @@ export default function MultipleSelect() {
                   <div className="trial">
                     <FormControl className={classes.formControl}>
                       <InputLabel className="select_text" id="demo-mutiple-chip-label">Select your Skills (Choose up to 5) ...</InputLabel>
-                      <Select
+                        <Select
                           labelId="demo-mutiple-chip-label"
                           id="demo-mutiple-chip"
                           multiple
-                          value={personName}
+                          value={skill}
                           onChange={handleChange}
                           input={<Input id="select-multiple-chip" />}
                           renderValue={selected => 
@@ -269,27 +208,35 @@ export default function MultipleSelect() {
                                 ))}
                               </div>
                             )}
-                          MenuProps={MenuProps}
-                      >
-                        {names.map(name => 
-                          (
-                            <MenuItem key={name} value={name} style={getStyles(name, personName, theme)}>
-                              {name}
-                            </MenuItem>
-                          ))}
-                      </Select> 
-                    </FormControl>
-                  </div>
+                          MenuProps={MenuProps}>
+                          {names.map(name => 
+                            (
+                              <MenuItem key={name} value={name} style={getStyles(name, skill, theme)}>
+                                {name}
+                              </MenuItem>
+                            ))}
+                        </Select> 
+                  </FormControl>
+                </div>
                   
-                  <button className="inputBox" type="submit">Submit!</button>
-                          </form>}
-                  {showLogin && <div>hey</div>}
-                  
-                  <button className="inputBox_existing" onClick={() => setLogin(!showLogin)}>
-                  Existing User? Click Here
-      </button>
-      
-        
+                <button className="inputBox" type="submit">Submit!</button>
+                </form>}
+                  {login && <form action="" method="POST">
+                
+                  <input className="inputBox" type="text" name="fsuEmail" placeholder="FSU E-mail"></input>
+             
+                  <input className="inputBox" type="password" name="password" placeholder="Password"></input>
+                
+                <button className="inputBox" type="submit">Log In</button>
+                </form>} 
+                
+                <button className="inputBox_existing" onClick={() => {
+                  triggerRegistration();
+                  triggerLogin();
+                  triggerButton();
+                }}>
+                  {button}
+                </button>
               </div>
             </div>
           </div>

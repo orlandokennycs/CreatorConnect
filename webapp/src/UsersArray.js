@@ -20,11 +20,12 @@ class UsersArray extends React.Component {
     })
   }
   
-  
   render() {
     const userCount = this.state.data.map((user) => console.log("")).length;
     console.log(userCount)
     window.count=userCount
+    
+
     return(
       this.state.data.map((user, i) => {
         return(
@@ -42,7 +43,10 @@ class UsersArray extends React.Component {
         </div>
         )
       })  
-    ) 
+    )
+    
+    
+
   }
 }
 export default UsersArray

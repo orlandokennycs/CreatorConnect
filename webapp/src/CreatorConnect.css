@@ -47,6 +47,11 @@ h2 {
   text-align: center;
 }
 
+.textAboveSearch
+{
+  margin-bottom: 1vh;
+}
+
 
 /*Paragraph attribute used when listing skills*/
 p {
@@ -223,7 +228,6 @@ input[type=checkbox] {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   color:lightgray;
   font-size: 2.4vw;
-  padding-top: 1.2vw;
   padding-bottom: 1.2vw;
   padding-left: 2vw;
   padding-right: 2vw;
@@ -315,11 +319,11 @@ flex auto*/
   width: 40vw;
   min-height: 80vh;
   margin-left: 10vw;
-  margin-top: 10vh;
+  
   border-radius: 0.694vw;
   flex: auto;
   padding-bottom: 5vh;
-  margin-bottom: 10vh;
+  
 }
 
 /*Sign Up/Sign In box Text*/
@@ -334,6 +338,7 @@ h4
   font-size: 5vw;
   color:#5F2D38;/*#EAE3D1;*/
   text-align: center;
+  margin-top: 2vh;
 }
 
 .information
