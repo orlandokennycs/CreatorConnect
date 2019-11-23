@@ -10,6 +10,14 @@ import UsersArray from './UsersArray';
 import SignUp from './SignUp';
 import Login from './Login';
 import Launch from './Launch'
+//import "@fortawesome/fontawesome-free/css/all.min.css";
+//import "bootstrap-css-only/css/bootstrap.min.css";
+//import "mdbreact/dist/css/mdb.css";
+
+/*const styleLink = document.createElement("link");
+styleLink.rel = "stylesheet";
+styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+document.head.appendChild(styleLink);*/
 
 //the router below reads the path that the user is on and throws a React component at it depending on the path.
 const routing = (

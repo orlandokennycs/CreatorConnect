@@ -47,6 +47,7 @@ h2 {
   text-align: center;
 }
 
+
 /*Paragraph attribute used when listing skills*/
 p {
   font-family: bebas-neue-by-fontfabric, sans-serif;
@@ -166,18 +167,11 @@ ul{
 
 }
 
-.signup {
-  /*margin-left: 3.5vw;
-  margin-right: 2vw;
-  */
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-  width: 100%;
-  line-height: 2.3vw;
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  font-size: 25px;
-  color: #EAE3D1;
+.inputBox {
+  margin-left: 5vw;
+  margin-top: 2vh;
+  width: 20vw;
+  height: 4vh;
 
 }
 
@@ -190,7 +184,6 @@ ul{
   margin-bottom: 1.3vw;
   margin-top: .2vw;
   height: 2.5vw;
-  font-family: bebas-neue-by-fontfabric, sans-serif;
   font-size:  1.8vw;
   padding-left: .5vw;
   align-content: center;
@@ -281,3 +274,85 @@ input[type=checkbox] {
   background-color: #5F2D38;
 
 }
+
+/*Custom Div setup for left side of launch page*/
+.leftDiv
+{
+  width: 40vw;
+  height: 100vh;
+ /* display: flex;
+  justify-content: center;*/
+}
+
+/*Used to center Innovation Hub logo found at the center of the left side of the launch page*/ 
+.hubLogo
+{
+  max-width: 25vw;
+  margin-left: 14.583vw;
+  margin-top: 24.963vh;
+}
+
+.rightDiv
+{
+  width: 60vw;
+  height: 100vh;
+  margin-right: 0vw;
+ /* display: flex;
+  justify-content: center;*/
+}
+
+/*Flex component that aligns the divs from left to right*/
+.bothDivs
+{
+  display: flex;
+  align-items: flex-start;
+}
+
+/*Sign Up/Sign In Box*/
+.signUpOrIn
+{
+  background-color: #EAE3D1;
+  width: 40vw;
+  height: 80vh;
+  margin-left: 10vw;
+  margin-top: 10vh;
+  border-radius: 0.694vw;
+}
+
+/*Sign Up/Sign In box Text*/
+h4
+{
+  padding-top: 3vh;
+  background-size: cover;
+  margin-bottom: 0vw;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5vw;
+  color:#5F2D38;/*#EAE3D1;*/
+  text-align: center;
+}
+
+.information
+{
+  /*background-color: white;*/
+  width: 30vw;
+  max-height: 60vh;
+  margin-top: 0vh;
+  margin-left: 5vw;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.informationWrap
+{
+  display: flex;
+  align-items: row-reverse;
+}
+
+.trial
+{
+  width: 20vw;
+  margin-left: 5vw;
+}
+
