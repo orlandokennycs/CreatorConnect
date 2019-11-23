@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom';
 import { numberTypeAnnotation } from 'babel-types';
 import './CreatorConnect.css';
@@ -118,7 +118,9 @@ const DropdownBox = () => (
 class Launch extends React.Component {
   state = {
     selected: [],
+    shown: true,
   }
+  
   
   
 
@@ -138,6 +140,7 @@ class Launch extends React.Component {
               <div className="informationWrap">
               <div className = "information">
               <form action="" method="POST">
+                
                   <input className="inputBox" type="text" name="firstName" placeholder="First Name"></input>
                 
                   <input className="inputBox" type="text" name="lastName" placeholder="Last Name"></input>
@@ -200,6 +203,7 @@ class Launch extends React.Component {
   }
 }
 export default function MultipleSelect() {
+  const [showLogin, setLogin] = useState(true);
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
@@ -229,15 +233,16 @@ export default function MultipleSelect() {
         <div className = "rightDiv">
           <div className = "signUpOrIn">
             <div className = "CreatorConnectLogo">
-              <h4><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect</h4>
+            <h4><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect</h4>
               <div className="informationWrap">
               <div className = "information">
-              <form action="" method="POST">
+              
+              {showLogin && <form action="" method="POST">
                   <input className="inputBox" type="text" name="firstName" placeholder="First Name"></input>
                 
                   <input className="inputBox" type="text" name="lastName" placeholder="Last Name"></input>
                 
-                  <input className="inputBox" type="text" name="fsuEmail" placeholder="FSU e-mail"></input>
+                  <input className="inputBox" type="text" name="fsuEmail" placeholder="FSU E-mail"></input>
              
                   <input className="inputBox" type="password" name="password" placeholder="Password"></input>
                 
@@ -246,36 +251,45 @@ export default function MultipleSelect() {
                   <input className="inputBox" type="text" name="gradyear" placeholder="Grad Year"></input>
                   
                   <div className="trial">
-                  <FormControl className={classes.formControl}>
-        <InputLabel id="demo-mutiple-chip-label">Select your Skills (Choose up to 5) ...</InputLabel>
-        <Select
-          labelId="demo-mutiple-chip-label"
-          id="demo-mutiple-chip"
-          multiple
-          value={personName}
-          onChange={handleChange}
-          input={<Input id="select-multiple-chip" />}
-          renderValue={selected => (
-            <div className={classes.chips}>
-              {selected.map(value => (
-                <Chip key={value} label={value} className={classes.chip} />
-              ))}
-            </div>
-          )}
-          MenuProps={MenuProps}
-        >
-          {names.map(name => (
-            <MenuItem key={name} value={name} style={getStyles(name, personName, theme)}>
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+                    <FormControl className={classes.formControl}>
+                      <InputLabel className="select_text" id="demo-mutiple-chip-label">Select your Skills (Choose up to 5) ...</InputLabel>
+                      <Select
+                          labelId="demo-mutiple-chip-label"
+                          id="demo-mutiple-chip"
+                          multiple
+                          value={personName}
+                          onChange={handleChange}
+                          input={<Input id="select-multiple-chip" />}
+                          renderValue={selected => 
+                            (
+                              <div className={classes.chips}>
+                                {selected.map(value => 
+                                (
+                                  <Chip key={value} label={value} className={classes.chip} />
+                                ))}
+                              </div>
+                            )}
+                          MenuProps={MenuProps}
+                      >
+                        {names.map(name => 
+                          (
+                            <MenuItem key={name} value={name} style={getStyles(name, personName, theme)}>
+                              {name}
+                            </MenuItem>
+                          ))}
+                      </Select> 
+                    </FormControl>
                   </div>
-
+                  
                   <button className="inputBox" type="submit">Submit!</button>
-                  <button className="inputBox" >Existing User? Click Here</button>
-        </form>
+                          </form>}
+                  {showLogin && <div>hey</div>}
+                  
+                  <button className="inputBox_existing" onClick={() => setLogin(!showLogin)}>
+                  Existing User? Click Here
+      </button>
+      
+        
               </div>
             </div>
           </div>
