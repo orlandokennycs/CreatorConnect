@@ -47,6 +47,11 @@ h2 {
   text-align: center;
 }
 
+.textAboveSearch
+{
+  margin-bottom: 1vh;
+}
+
 
 /*Paragraph attribute used when listing skills*/
 p {
@@ -223,7 +228,6 @@ input[type=checkbox] {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   color:lightgray;
   font-size: 2.4vw;
-  padding-top: 1.2vw;
   padding-bottom: 1.2vw;
   padding-left: 2vw;
   padding-right: 2vw;
@@ -297,8 +301,6 @@ input[type=checkbox] {
   width: 60vw;
   height: 100vh;
   margin-right: 0vw;
- /* display: flex;
-  justify-content: center;*/
 }
 
 /*Flex component that aligns the divs from left to right*/
@@ -308,15 +310,20 @@ input[type=checkbox] {
   align-items: flex-start;
 }
 
-/*Sign Up/Sign In Box*/
+/*Sign Up/Sign In Box
+This contains info, set min height to allow growth
+flex auto*/
 .signUpOrIn
 {
   background-color: #EAE3D1;
   width: 40vw;
-  height: 80vh;
+  min-height: 80vh;
   margin-left: 10vw;
-  margin-top: 10vh;
+  
   border-radius: 0.694vw;
+  flex: auto;
+  padding-bottom: 5vh;
+  
 }
 
 /*Sign Up/Sign In box Text*/
@@ -331,17 +338,19 @@ h4
   font-size: 5vw;
   color:#5F2D38;/*#EAE3D1;*/
   text-align: center;
+  margin-top: 2vh;
 }
 
 .information
 {
   /*background-color: white;*/
   width: 30vw;
-  max-height: 60vh;
+  min-height: 60vh;
   margin-top: 0vh;
   margin-left: 5vw;
-  display: flex;
-  justify-content: flex-start;
+  overflow:auto;
+  /*display: flex;
+  justify-content: flex-start;*/
 }
 
 .informationWrap
@@ -352,7 +361,25 @@ h4
 
 .trial
 {
-  width: 20vw;
-  margin-left: 5vw;
+  width: 30vw;
+  margin-left: 4.5vw;
+  /*flex-direction: column;*/
 }
+
+.select_text{
+  font-size: 1vw !important;
+}
+
+.MuiInput-underline{
+  width: 20vw;
+}
+
+.inputBox_existing {
+  margin-left: 5vw;
+  margin-top: 2vh;
+  width: 20vw;
+  height: 4vh;
+
+}
+
 
