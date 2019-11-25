@@ -15,6 +15,19 @@ def listUsers():
     # Return new response object formatted with users
     return Response(200, users).serialize()
 
+# /users
+@app.route('/users/page/<int:page>')
+def listUsersPagination(page):
+    # if less than 1
+    if page < 1:
+        return Response(400, {"error":"that's not gonna work"}).serialize()
+
+    # Search for first 10 users and typecast to list
+    users = list(mongo.db.users.find({}).skip((page-1)*9).limit(9))
+
+    # Return new response object formatted with users
+    return Response(200, users).serialize()
+
 # /allUsers
 @app.route('/allUsers')
 def listAllUsers():

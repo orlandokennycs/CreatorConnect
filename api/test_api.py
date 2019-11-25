@@ -4,6 +4,7 @@ import pytest
 # import app
 from api_main import app
 
+
 @pytest.fixture
 def client():
     # Set testing mode
@@ -13,11 +14,13 @@ def client():
     with app.test_client() as client:
         yield client
 
+
 def test_site_root(client):
     """Test if the app runs."""
 
     rv = client.get('/')
     assert b'Success' in rv.data
+
 
 def test_user_data(client):
     """Test if the returns user data."""
@@ -25,3 +28,11 @@ def test_user_data(client):
     rv = client.get('/users')
     res = json.loads(rv.data)
     assert len(res['data']) == 10
+
+
+def test_user_pagination(client):
+    """Test if the returns user data."""
+
+    rv = client.get('/users/page/1')
+    res = json.loads(rv.data)
+    assert len(res['data']) == 9
