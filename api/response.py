@@ -27,7 +27,7 @@ def getResponseData(code):
     }
 
     # errObj, the default response when a code is not found in the possibleCodes dict
-    errObj = {"status": "Fatal Error", "message": "The code returned does not correcpond with a status! Contact an admin for help."}
+    errObj = {"status": "Fatal Error", "message": "The code returned does not correspond with a status! Contact an admin for help."}
     
     # Return the code's corresponding dict
     return possibleCodes.get(code, errObj)
