@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './CreatorConnect.css';
-import { Route, BrowserRouter as Router, Link } from 'react-router-dom';
+import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
 import {render} from 'react-dom';
 
 import * as serviceWorker from './serviceWorker';
 import Home from './Home';
 import UsersArray from './UsersArray';
 import Launch from './Launch'
+import Error from './Error'
 //import "@fortawesome/fontawesome-free/css/all.min.css";
 //import "bootstrap-css-only/css/bootstrap.min.css";
 //import "mdbreact/dist/css/mdb.css";
@@ -20,8 +21,11 @@ document.head.appendChild(styleLink);*/
 //the router below reads the path that the user is on and throws a React component at it depending on the path.
 const routing = (
   <Router>
-      <Route path="/launch" component={Launch}/>
-      <Route path="/cards" component={Home}/>
+    <Switch>
+      <Route exact path="/" component={Launch}/>
+      <Route exact path="/cards" component={Home}/>
+      <Route exact path="/*" exact component={Error} />
+      </Switch>
   </Router>
 )
 //the code below reads the path and renders component on a conditional basis. i.e. /home throws two different components at different places...
