@@ -37,7 +37,42 @@
   <body>
     <div id ="root"></div>
 
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <!DOCTYPE html>
+    <script>
+      function searchBar() 
+      {
+        console.log(window.count)
+        var input, filter;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        searchResults = []
+        userText = []
+        for(i = 0; i < window.count; i++)
+        {
+          div = document.getElementById("searchUsers" + i);
+          userText.push(div.innerText)
+        } 
+        for(i = 0; i < window.count; i++)
+        {
+          searchResults = []
+          if (userText[i].toUpperCase().indexOf(filter) > -1) 
+          {
+            div = document.getElementById("searchUsers" + i)
+            searchResults.push(div)
+            div.style.display = ""
+          } 
+          else 
+          {
+            div = document.getElementById("searchUsers" + i);
+            div.style.display = "none";
+          }
+        }
+      }
+
+      function testfnc()
+      {
+        alert('works')
+      }
+    </script>
+    
   </body>
 </html>

@@ -360,7 +360,6 @@ h4
   min-height: 60vh;
   margin-top: 0vh;
   margin-left: 5vw;
-  overflow:auto;
   /*display: flex;
   justify-content: flex-start;*/
 }
@@ -404,8 +403,11 @@ h4
 
  .homeText:hover
  {
-   background-color: black;
+   background-color: rgb(160, 75, 93);
 
  }
 
+ .select_text{
+   font-size: 1vh;
+ }
 
