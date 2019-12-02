@@ -143,7 +143,6 @@ export default function MultipleSelect() {
     if(button == existingUser)
     {
       setButton(newUser)
-      
     }
     else
     {
