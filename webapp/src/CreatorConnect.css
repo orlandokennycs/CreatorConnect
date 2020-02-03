@@ -4,7 +4,6 @@
 body {
   background-repeat: no-repeat;
   background-color: #5F2D38;
-
   /*
   background-image: url('https://i.imgur.com/FmyiR9X.gif');
   background-size: cover;
@@ -59,9 +58,19 @@ h3 {
   text-align: center;
 }
 
+
 .textAboveSearch
 {
-  margin-bottom: 1vh;
+  background-size: cover;
+  margin-top: 10vh;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 6.944vw;
+  color: #EAE3D1;
+  text-align: center;
+  
+  margin-bottom: .1vh;
 }
 
 
@@ -377,6 +386,14 @@ h4
   /*flex-direction: column;*/
 }
 
+.dropdown
+{
+  width: 20.5vw;
+  margin-left: 2.5vw;
+  margin-top: 1vh;
+  /*flex-direction: column;*/
+}
+
 .select_text{
   font-size: 1vw !important;
 }
@@ -410,4 +427,48 @@ h4
  .select_text{
    font-size: 1vh;
  }
+
+ .topnav {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  overflow: hidden;
+  background-color: #d3d3d3;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+
+}
+
+.topnav a {
+  float: right;
+  color: #EAE3D1;
+  text-align: center;
+  padding: .5vh;
+  text-decoration: none;
+  
+}
+
+.topnav a:hover {
+  background-color: #B5C2B7;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.logout {
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-size: 5vh;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  padding: 0vh;
+  color: #5F2D38;
+  
+
+}
 

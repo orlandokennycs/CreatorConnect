@@ -22,6 +22,10 @@ else:
 
 # Init Flask App
 app = Flask(__name__)
+app.config['DEBUG'] = True
+app.config['SESSION_COOKIE_HTTPONLY'] = False
+app.config['SESSION_REFRESH_EACH_REQUEST'] = False
+
 cors(app)
 
 # Init MongoDB Connection and run sample query to test authentication
@@ -45,6 +49,10 @@ except OperationFailure as err:
 # Now that app is initialized, import other paths
 # Import all get requests
 import api_gets
+import api_handle
 
 if __name__ == '__main__':
+    app.secret_key = 'mysecret'
+    
+
     app.run()
