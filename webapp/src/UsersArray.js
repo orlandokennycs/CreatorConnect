@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import { numberTypeAnnotation } from 'babel-types';
 import './CreatorConnect.css';
 
 class UsersArray extends React.Component {

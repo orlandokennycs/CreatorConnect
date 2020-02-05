@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom';
-import { numberTypeAnnotation } from 'babel-types';
 import './CreatorConnect.css';
-import { Route, BrowserRouter as Router, Link } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Link, Redirect } from 'react-router-dom';
 import {render} from 'react-dom';
 import { bool } from 'prop-types';
 
@@ -15,11 +14,10 @@ const STYLE = {
     fontSize: "1.5em"
   }
 }
-
+var logged = 1
 /*declaration of the Launch class that will hold form data*/
-class Launch extends React.Component {
-  
-}
+class Launch extends React.Component {}
+
 
 /*This function will be used to handle the form*/
 export default function MultipleSelect() {
@@ -38,10 +36,6 @@ export default function MultipleSelect() {
     gradDate: ' ',
     skills: [],
     dateCreated: Date()
-  }
-
-  function info() {
-    alert(newUserData.skills)
   }
 
   /*Trigger buttons that use hooks to either show or hide the login/signup option*/
@@ -74,7 +68,7 @@ export default function MultipleSelect() {
               <div className = "information">
 
               {/*first form, the new user method:POST action = 'http://127.0.0.1:5000/newUser' method = 'POST'*/}
-              {registration && <form action = 'http://127.0.0.1:5000/register' method = 'POST' onSubmit={info}>
+              {registration && <form action = 'http://localhost:5000/register' method = 'POST'>
                   <input required className="inputBox" type="text" name="firstName" placeholder="First Name" ref={input => newUserData.firstName = input}></input>
                 
                   <input required className="inputBox" type="text" name="lastName" placeholder="Last Name" ref={input => newUserData.lastName = input}></input>
@@ -83,10 +77,7 @@ export default function MultipleSelect() {
              
                   <input required className="inputBox" type="password" name="password" placeholder="Password" ref={input => newUserData.password = input}></input>
                 
-                  {/*
-                  VERIFY PASSWORD INPUT BOX... WILL BE LEFT OUT FOR BETA AND FOCUS GROUP RELEASE
-                  <input className="inputBox" type="password" name="verify" placeholder="Verify Password"></input>
-                  */}
+                  {/*VERIFY PASSWORD INPUT BOX... WILL BE LEFT OUT FOR BETA AND FOCUS GROUP RELEASE*/}
                 
                 <div className="dropdown">
                   <select required name="gradYear" class="ui fluid dropdown">
@@ -100,8 +91,7 @@ export default function MultipleSelect() {
                       <option value="2026">2026</option>
                   </select>
                 </div>
-                  {/*<input required className="inputBox" type="text" name="gradYear" placeholder="Grad Year" ref={input => newUserData.gradDate = input}></input>
-                  {/*MAKE ALPHABETICAL*/}
+                  {/*MAKE ALPHABETICALLY INSENSITIVE*/}
                   <div className="dropdown">
                     <select required name="firstSkill" class="ui fluid dropdown">
                       <option value="">Skill #1 (REQUIRED)</option>
@@ -225,7 +215,7 @@ export default function MultipleSelect() {
                 </form>}
 
                 {/*second form, the existing user form*/}
-                {login && <form action = 'http://127.0.0.1:5000/login' method = 'POST' >
+                {login && <form action = 'http://localhost:5000/login' method = 'POST'>
                   <input required className="inputBox" type="text" name="fsuEmail" placeholder="FSU E-mail"></input>
                   <input required className="inputBox" type="password" name="password" placeholder="Password"></input>
                   <button className="inputBox" type="submit">Log In</button>
@@ -246,5 +236,5 @@ export default function MultipleSelect() {
       </div>
     </div>
   </div>
-  );
+  )
 }
