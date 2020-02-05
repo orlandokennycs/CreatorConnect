@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import { numberTypeAnnotation } from 'babel-types';
 import './CreatorConnect.css';
 
 class UsersArray extends React.Component {
@@ -17,17 +16,14 @@ class UsersArray extends React.Component {
     .then(results => results.json())
     .then(response => {
       this.setState({data: response.data});
-      
     })
-    
   }
   
   render() {
     const userCount = this.state.data.map((user) => console.log("")).length;
     console.log(userCount)
     window.count=userCount
-    
-
+  
     return(
       this.state.data.map((user, i) => {
         return(
@@ -41,14 +37,11 @@ class UsersArray extends React.Component {
                   return(<li key={j}><p>{skill}</p></li>)
                 })
               }
-              </ul>
+            </ul>
         </div>
         )
       })  
     )
-    
-    
-
   }
 }
 export default UsersArray

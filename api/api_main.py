@@ -2,11 +2,12 @@ import sys
 import json
 import configparser
 from os import environ
-from flask import Flask
+from flask import Flask, jsonify, json
 from bson import json_util
 from flask_pymongo import PyMongo
 from flask_cors import CORS as cors
 from pymongo.errors import ConfigurationError, OperationFailure
+from bson.objectid import ObjectId
 
 # Get config
 config = configparser.ConfigParser()
@@ -22,7 +23,11 @@ else:
 
 # Init Flask App
 app = Flask(__name__)
-cors(app)
+app.config['DEBUG'] = True
+app.config['SESSION_COOKIE_HTTPONLY'] = False
+app.config['SESSION_REFRESH_EACH_REQUEST'] = False
+
+cors(app, origins=["http://localhost:3000"], headers=['Content-Type'], expose_headers=['Access-Control-Allow-Origin'], supports_credentials=True)
 
 # Init MongoDB Connection and run sample query to test authentication
 app.config["MONGO_URI"] = config['MongoDB']['URI']
@@ -45,6 +50,10 @@ except OperationFailure as err:
 # Now that app is initialized, import other paths
 # Import all get requests
 import api_gets
+import api_handle
 
 if __name__ == '__main__':
-    app.run()
+    app.secret_key = 'mysecret'
+    
+
+    app.run(host="localhost", port=8000, debug=True)
