@@ -9,6 +9,7 @@ import Home from './Home';
 import UsersArray from './UsersArray';
 import Launch from './Launch'
 import Error from './Error'
+import About from './About'
 
 //the router below reads the path that the user is on and throws a React component at it depending on the path.
 const routing = (
@@ -16,9 +17,9 @@ const routing = (
     <Switch>
       <Route exact path="/" component={Launch}/>
       <Route  exact path="/cards" component={Home}/>
+      <Route exact path="/about" exact component={About}/>
       <Route exact path="/*" exact component={Error} />
-      
-      </Switch>
+    </Switch>
   </Router>
 )
 //the code below reads the path and renders component on a conditional basis. i.e. /home throws two different components at different places...
