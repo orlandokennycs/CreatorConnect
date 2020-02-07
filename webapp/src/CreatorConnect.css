@@ -305,7 +305,10 @@ fieldset {
 {
 
 }
-
+html,body {
+  margin:0;
+  padding:0;
+}
 input[type=checkbox] {
   width: 2vw;
 }
@@ -406,7 +409,7 @@ flex auto*/
   width: 40vw;
   min-height: 80vh;
   margin-left: 10vw;
-  
+  margin-top: 5vh;
   border-radius: 0.694vw;
   flex: auto;
   padding-bottom: 5vh;
@@ -512,7 +515,7 @@ h4
   position: absolute;
   width: 100vw;
   top: 0;
-  overflow: hidden;
+  overflow: none;
   background-color: #d3d3d3;
   font-family: bebas-neue-by-fontfabric, sans-serif;
 
@@ -520,7 +523,7 @@ h4
 
 .topnav a {
   
-  float: right;
+  
   color: #5F2D38;
   text-align: center;
   padding: .5vh;
@@ -563,6 +566,7 @@ h4
   margin-left: 10vw;
 }
 .logout {
+  float: right;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-size: 5vh;
   background-color: Transparent;
@@ -573,11 +577,14 @@ h4
   outline:none;
   padding: .25vh;
   color: #5F2D38;
-  padding-top: 1vh;
+  margin-top: 1.4vh;
+  padding-top: 0vh;
   padding-right: .75vw;
   padding-left: .75vw;
 }
-
+.formWrap{
+  background-color: #EAE3D1;
+}
 .support {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-size: 5vh;
@@ -596,9 +603,33 @@ h4
   margin-right: 41vw;
 }
 
+.emptyForm {
+  width: 0vw;
+  height: 0vh;
+}
 
 
 
+.teamBlurb{
+  border-radius: 0.694vw;
+ 
+  background-color: #5F2D38;
+
+  
+  margin-top: 1vh;
+  
+  margin-left: 20vw;
+  width: 50vw;
+  height: 20vh;
+}
+
+.teamPics {
+  margin-top: 2vh;
+  margin-left: 2vw;
+  border-radius: 50%;
+  width: 11vw;
+  height: 18vh;
+}
 
 .leftNavBar {
   
@@ -612,7 +643,7 @@ h4
   outline:none;
   padding: .25vh;
   color: #5F2D38;
-  padding-top: 1.25vh;
+  padding-top: 0vh;
   margin-left: 0vw;
   padding-right: .75vw;
   padding-left: .75vw;
