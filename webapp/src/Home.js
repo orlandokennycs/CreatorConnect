@@ -81,6 +81,7 @@ class Home extends React.Component {
         }).catch((error) => {
             console.error(error);
         });
+    
   }
 
   keyUpHandler(refName, e) {
@@ -111,7 +112,9 @@ class Home extends React.Component {
           }
         }
   }
+
   
+
   openModal() {
     this.setState({modalIsOpen: true});
   }
@@ -172,7 +175,7 @@ class Home extends React.Component {
       { }
       
       <div class="topnav">
-        <form action='http://localhost:5000/logout' method = 'POST' >
+        <form className="formWrap" action='http://localhost:5000/logout' method = 'POST' >
           <a href="#home"><button className = "logout" type="submit">Logout</button></a> 
         </form>
         <button className="leftNavBar" onClick={this.openModal}>ABOUT  |</button>
@@ -187,7 +190,7 @@ class Home extends React.Component {
           <h1 className="modalLogo"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h1>
           <div className="modalText">
             <p>
-              <span style={STYLE.SLI}>C</span>reator<span style={STYLE.SLI}>C</span>onnect’s primary goal is to bridge the gap between skilled students and those who need assistance with developing their independent projects! <br></br>
+              <span style={STYLE.SLI}>C</span><span style={STYLE.EMPH}>reator</span><span style={STYLE.SLI}>C</span><span style={STYLE.EMPH}>onnect</span>’s primary goal is to bridge the gap between skilled students and those who need assistance with developing their independent projects! <br></br>
               <span style={STYLE.SLI}>R</span>ally with us here at The Innovation Hub as we encourage the expression of creativity and critical thinking! <br></br>
               <span style={STYLE.SLI}>E</span><span style={STYLE.EMPH}>mpathize, Ideate, and Build</span> no matter what field you're in!<br></br>
               <span style={STYLE.SLI}>A</span>dvance your skillset and expertise with our network of other Creators!<br></br>
@@ -196,7 +199,7 @@ class Home extends React.Component {
             </p>
           </div>
         </Modal>
-        <a href="http://www.google.com" target="_blank" className="support">FEEDBACK</a>
+       {/* <a href="http://www.google.com" target="_blank" className="support">FEEDBACK</a>*/}
 
         <button className="leftNavBar" onClick={this.teamOpenModal}>TEAM  |</button>
         <Modal
@@ -206,6 +209,11 @@ class Home extends React.Component {
           contentLabel="Example Modal">
           <div className="modalBtn">
             <button onClick={this.teamCloseModal}>close</button>
+          </div>
+
+          <h1 className="modalLogo"><span style={STYLE.EMPH}>M</span>eet&nbsp;&nbsp;the<span style={STYLE.EMPH}>&nbsp;&nbsp;T</span>eam</h1>
+          <div className="teamBlurbContainer">
+            
           </div>
         </Modal>
         
@@ -220,6 +228,8 @@ class Home extends React.Component {
           </div>
         </Modal>
 
+        <button className="leftNavBar"><a href="https://forms.gle/j19asMDP9VCjtQMDA" target="_blank">FEEDBACK</a></button>
+
         
       </div>
 
@@ -229,7 +239,7 @@ class Home extends React.Component {
 
         <h2 className="textAboveSearch"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h2>
         <div class="parent">
-          <div class="searchBar"><input id="myInput" type="text" onKeyUp={this.handleSearch} placeholder="Search through names and skills..." ref="search"></input></div>
+          <div class="searchBar"><input id="myInput" type="text" onKeyUp={this.handleSearch} placeholder={"Search through " + this.state.totalUsers + " users and their skills..."} ref="search"></input></div>
         </div>
         <div class="cards-container" id = "users">
       <UsersArray></UsersArray>
