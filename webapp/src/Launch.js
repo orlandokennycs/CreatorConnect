@@ -12,6 +12,10 @@ const STYLE = {
   SPAN:
   {
     fontSize: "1.5em"
+  },
+  BETA:
+  {
+    fontSize: ".25em"
   }
 }
 var logged = 1
@@ -62,7 +66,7 @@ export default function MultipleSelect() {
         <div className = "rightDiv">
           <div className = "signUpOrIn">
             <div className = "CreatorConnectLogo">
-            <h4><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect</h4>
+            <h4 className="launchText"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h4>
 
               <div className="informationWrap">
               <div className = "information">
