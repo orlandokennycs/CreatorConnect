@@ -9,7 +9,7 @@ import Home from './Home';
 import UsersArray from './UsersArray';
 import Launch from './Launch'
 import Error from './Error'
-import About from './About'
+import About from './About' 
 
 //the router below reads the path that the user is on and throws a React component at it depending on the path.
 const routing = (

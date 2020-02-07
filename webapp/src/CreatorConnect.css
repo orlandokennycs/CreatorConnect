@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /*Garnet Background*/
 body {
   background-repeat: no-repeat;
@@ -66,13 +67,77 @@ h3 {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 6.944vw;
+  /*font-size: 6.944vw;*/
+  font-size: 6.2vw;
   color: #EAE3D1;
   text-align: center;
   
   margin-bottom: .1vh;
 }
 
+.modalLogo
+{
+  background-size: cover;
+  margin-top: 0vh;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /*font-size: 6.944vw;*/
+  font-size: 6.2vw;
+  color: #5F2D38;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.modalText
+{
+  margin: 0vh;
+  margin-left: 16vw;
+  width: 60vw;
+  height: 50vh;
+}
+
+.modalText p {
+  font-size: 2.2vw;
+  padding: 0;
+  margin: 0;
+}
+
+.modalBtn
+{
+
+}
+.modalBtn button
+{
+  width: 7vw;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 2vw;
+  color: #EAE3D1;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #5F2D38;
+}
+.modalBtn button:hover
+{
+  width: 7vw;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 2vw;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+.modalBtn button:active
+{
+  width: 7vw;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 2vw;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
 
 /*Paragraph attribute used when listing skills*/
 p {
@@ -363,6 +428,20 @@ h4
   margin-top: 2vh;
 }
 
+.launchText
+{
+  padding-top: 3vh;
+  background-size: cover;
+  margin-bottom: 0vw;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5vw;
+  color:#5F2D38;/*#EAE3D1;*/
+  text-align: center;
+  margin-top: 2vh;
+}
+
 .information
 {
   /*background-color: white;*/
@@ -430,7 +509,7 @@ h4
  }
 
  .topnav {
-  position: fixed;
+  position: absolute;
   width: 100vw;
   top: 0;
   overflow: hidden;
@@ -440,17 +519,27 @@ h4
 }
 
 .topnav a {
+  
   float: right;
-  color: #EAE3D1;
+  color: #5F2D38;
   text-align: center;
   padding: .5vh;
-  text-decoration: none;
+  padding-top: 0;
+  text-decoration: none;  
+}
+
+
+
+.modal {
+  background-color: black;
+  color: #EAE3D1; 
   
 }
 
 .topnav a:hover {
   background-color: #B5C2B7;
   color: black;
+  height: 90%;
 }
 
 .topnav a.active {
@@ -458,6 +547,21 @@ h4
   color: white;
 }
 
+.topnav button:hover {
+  background-color: #B5C2B7;
+  color: black;
+  height: 9.5vh;
+}
+
+.topnav button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.topNav div {
+  margin-left: 10vw;
+}
 .logout {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-size: 5vh;
@@ -467,9 +571,69 @@ h4
   cursor:pointer;
   overflow: hidden;
   outline:none;
-  padding: 0vh;
+  padding: .25vh;
   color: #5F2D38;
-  
+  padding-top: 1vh;
+  padding-right: .75vw;
+  padding-left: .75vw;
+}
 
+.support {
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-size: 5vh;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  padding: .25vh;
+  color: #5F2D38;
+  padding-top: 3vh;
+  padding-right: .75vw;
+  
+  margin-top: 1vh;
+  margin-right: 41vw;
+}
+
+
+
+
+
+.leftNavBar {
+  
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-size: 5vh;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  padding: .25vh;
+  color: #5F2D38;
+  padding-top: 1.25vh;
+  margin-left: 0vw;
+  padding-right: .75vw;
+  padding-left: .75vw;
+}
+
+
+.usersCount {
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-size: 5vh;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  padding: .25vh;
+  margin: 0;
+  margin-top: 1vh;
+  margin-left: 45vw;
+  color: #5F2D38;
+  padding-right: .75vw;
+  padding-left: .75vw;
 }
 

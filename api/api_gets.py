@@ -8,6 +8,10 @@ from response import Response
 def index():
     return Response(200, {}).serialize()
 
+@app.route('/userCount')
+def userCount():
+    totalUsers = mongo.db.users.count()
+    return Response(200, totalUsers).serialize()
 # /users
 @app.route('/users')
 def listUsers():
