@@ -98,6 +98,8 @@ h3 {
   height: 50vh;
 }
 
+
+
 .modalText p {
   font-size: 2.2vw;
   padding: 0;
@@ -553,7 +555,7 @@ h4
 .topnav button:hover {
   background-color: #B5C2B7;
   color: black;
-  height: 9.5vh;
+  height: 7.5vh;
 }
 
 .topnav button.active {
@@ -577,7 +579,7 @@ h4
   outline:none;
   padding: .25vh;
   color: #5F2D38;
-  margin-top: 1.4vh;
+  margin-top: 2vh;
   padding-top: 0vh;
   padding-right: .75vw;
   padding-left: .75vw;
@@ -624,11 +626,8 @@ h4
 }
 
 .teamPics {
-  margin-top: 2vh;
-  margin-left: 2vw;
-  border-radius: 50%;
-  width: 11vw;
-  height: 18vh;
+  max-width:100%;
+max-height:100%;
 }
 
 .leftNavBar {

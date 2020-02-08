@@ -213,7 +213,7 @@ class Home extends React.Component {
 
           <h1 className="modalLogo"><span style={STYLE.EMPH}>M</span>eet&nbsp;&nbsp;the<span style={STYLE.EMPH}>&nbsp;&nbsp;T</span>eam</h1>
           <div className="teamBlurbContainer">
-            
+            <img img src="/images/teamImage.png" className="teamPics"></img>
           </div>
         </Modal>
         
@@ -225,6 +225,13 @@ class Home extends React.Component {
           contentLabel="Example Modal">
           <div className="modalBtn">
             <button onClick={this.ftrCloseModal}>close</button>
+          </div>
+          <h1 className="modalLogo"><span style={STYLE.EMPH}>W</span>hat's&nbsp;&nbsp;<span style={STYLE.EMPH}>N</span>ext?</h1>
+          <div className="modalText">
+            <p>
+              <br></br>
+              <span style={STYLE.SLI}>O</span>ver the next few months we will be developing a host of new features and interface updates.<br></br><br></br> <span style={STYLE.SLI}>W</span>e hope to hear from you about what features you'd like either through our feedback survey or by email at...<br></br><br></br> <span style={STYLE.SLI}>info@innovation.fsu.edu</span>
+            </p>
           </div>
         </Modal>
 
