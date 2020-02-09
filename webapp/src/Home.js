@@ -36,11 +36,11 @@ class Home extends React.Component {
       data: 0,
       totalUsers: 0,
       modalIsOpen: false,
-      sptModalIsOpen: false, 
+      sptModalIsOpen: false,
       ftrModalIsOpen: false,
       teamModalIsOpen: false,
 
-      
+
     };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -58,7 +58,7 @@ class Home extends React.Component {
     this.teamAfterOpenModal = this.teamAfterOpenModal.bind(this);
     this.teamCloseModal = this.teamCloseModal.bind(this);
   }
-    
+
   componentDidMount() {
     const axios = require('axios');
     const axiosWithCookies = axios.create({
@@ -80,7 +80,7 @@ class Home extends React.Component {
         }).catch((error) => {
             console.error(error);
         });
-    
+
   }
 
   keyUpHandler(refName, e) {
@@ -94,17 +94,17 @@ class Home extends React.Component {
     {
       var div = document.getElementById("searchUsers" + i);
       userText.push(div.innerText)
-    } 
+    }
     for(i = 0; i < window.count; i++)
         {
           searchResults = []
-          if (userText[i].toUpperCase().indexOf(filter) > -1) 
+          if (userText[i].toUpperCase().indexOf(filter) > -1)
           {
             div = document.getElementById("searchUsers" + i)
             searchResults.push(div)
             div.style.display = ""
-          } 
-          else 
+          }
+          else
           {
             div = document.getElementById("searchUsers" + i);
             div.style.display = "none";
@@ -112,17 +112,17 @@ class Home extends React.Component {
         }
   }
 
-  
+
 
   openModal() {
     this.setState({modalIsOpen: true});
   }
- 
+
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    
+
   }
- 
+
   closeModal() {
     this.setState({modalIsOpen: false});
   }
@@ -130,12 +130,12 @@ class Home extends React.Component {
   sptOpenModal() {
     this.setState({sptModalIsOpen: true});
   }
- 
+
   sptAfterOpenModal() {
     // references are now sync'd and can be accessed.
-    
+
   }
- 
+
   sptCloseModal() {
     this.setState({sptModalIsOpen: false});
   }
@@ -143,12 +143,12 @@ class Home extends React.Component {
   ftrOpenModal() {
     this.setState({ftrModalIsOpen: true});
   }
- 
+
   ftrAfterOpenModal() {
     // references are now sync'd and can be accessed.
-    
+
   }
- 
+
   ftrCloseModal() {
     this.setState({ftrModalIsOpen: false});
   }
@@ -156,28 +156,28 @@ class Home extends React.Component {
   teamOpenModal() {
     this.setState({teamModalIsOpen: true});
   }
- 
+
   teamAfterOpenModal() {
     // references are now sync'd and can be accessed.
-    
+
   }
- 
+
   teamCloseModal() {
     this.setState({teamModalIsOpen: false});
   }
 
-  render() { 
-    
-    return this.state.data === 0 ? 
+  render() {
+
+    return this.state.data === 0 ?
     (
       <div> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
       { }
-      
+
       <div class="topnav">
         <form className="formWrap" action='http://localhost:5000/logout' method = 'POST' >
-          <a href="#home"><button className = "logout" type="submit">Logout</button></a> 
+          <a href="#home"><button className = "logout" type="submit">Logout</button></a>
         </form>
-        <button className="leftNavBar" onClick={this.openModal}>ABOUT |</button>
+        <button className="leftNavBar about" onClick={this.openModal}>&nbsp;ABOUT </button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -200,7 +200,7 @@ class Home extends React.Component {
         </Modal>
        {/* <a href="http://www.google.com" target="_blank" className="support">FEEDBACK</a>*/}
 
-        <button className="leftNavBar" onClick={this.teamOpenModal}>&nbsp;TEAM |</button>
+        <button className="leftNavBar " onClick={this.teamOpenModal}>&nbsp;TEAM </button>
         <Modal
           isOpen={this.state.teamModalIsOpen}
           onAfterOpen={this.teamAfterOpenModal}
@@ -215,8 +215,8 @@ class Home extends React.Component {
             <img img src="/images/teamImage.png" className="teamPics"></img>
           </div>
         </Modal>
-        
-        <button className="leftNavBar" onClick={this.ftrOpenModal}>&nbsp;WHAT'S NEXT? |</button>
+
+        <button className="leftNavBar wnext" onClick={this.ftrOpenModal}>&nbsp;WHAT'S NEXT </button>
         <Modal
           isOpen={this.state.ftrModalIsOpen}
           onAfterOpen={this.ftrAfterOpenModal}
@@ -234,14 +234,14 @@ class Home extends React.Component {
           </div>
         </Modal>
 
-        <button className="leftNavBar"><a href="https://forms.gle/j19asMDP9VCjtQMDA" target="_blank">FEEDBACK</a></button>
+        <button className="leftNavBar feedback"><a href="https://forms.gle/j19asMDP9VCjtQMDA" target="_blank">FEEDBACK</a></button>
 
-        
+
       </div>
 
 
-      
-      
+
+
 
         <h2 className="textAboveSearch"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h2>
         <div class="parent">
@@ -254,7 +254,7 @@ class Home extends React.Component {
     )
     :
     (
-      
+
       this.state.data === 5 ?
       (
         <div> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
@@ -266,7 +266,7 @@ class Home extends React.Component {
       )
       :
       (
-        this.state.data === 2 ? 
+        this.state.data === 2 ?
         (
           <div> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
           {
@@ -277,7 +277,7 @@ class Home extends React.Component {
         )
         :
         (
-          this.state.data === 3 ? 
+          this.state.data === 3 ?
           (
             <div> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
             {
@@ -299,25 +299,25 @@ class Home extends React.Component {
             )
             :
             (
-               
+
                 <div> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
                 {
                 alert("An unkown error occured. Please contact support. You will now be redirected to the launch page.")
                 }
                 <Redirect to={{pathname: "/",}}/>
                 </div>
-              
-              
+
+
             )
           )
         )
-          
+
       )
 
-      
-        
-    
-    ) 
+
+
+
+    )
   }
 }
 export default Home
