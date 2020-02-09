@@ -72,7 +72,6 @@ class Home extends React.Component {
         }).catch((error) => {
             console.error(error);
         });
-    
     axios.get(`http://localhost:5000/userCount`)
         .then((response) => {
             this.setState({
@@ -178,7 +177,7 @@ class Home extends React.Component {
         <form className="formWrap" action='http://localhost:5000/logout' method = 'POST' >
           <a href="#home"><button className = "logout" type="submit">Logout</button></a> 
         </form>
-        <button className="leftNavBar" onClick={this.openModal}>ABOUT  |</button>
+        <button className="leftNavBar" onClick={this.openModal}>ABOUT |</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -201,7 +200,7 @@ class Home extends React.Component {
         </Modal>
        {/* <a href="http://www.google.com" target="_blank" className="support">FEEDBACK</a>*/}
 
-        <button className="leftNavBar" onClick={this.teamOpenModal}>TEAM  |</button>
+        <button className="leftNavBar" onClick={this.teamOpenModal}>&nbsp;TEAM |</button>
         <Modal
           isOpen={this.state.teamModalIsOpen}
           onAfterOpen={this.teamAfterOpenModal}
@@ -217,7 +216,7 @@ class Home extends React.Component {
           </div>
         </Modal>
         
-        <button className="leftNavBar" onClick={this.ftrOpenModal}>WHAT'S NEXT?  |</button>
+        <button className="leftNavBar" onClick={this.ftrOpenModal}>&nbsp;WHAT'S NEXT? |</button>
         <Modal
           isOpen={this.state.ftrModalIsOpen}
           onAfterOpen={this.ftrAfterOpenModal}
