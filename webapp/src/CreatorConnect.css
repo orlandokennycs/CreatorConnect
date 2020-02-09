@@ -5,13 +5,6 @@
 body {
   background-repeat: no-repeat;
   background-color: #5F2D38;
-  /*
-  background-image: url('https://i.imgur.com/FmyiR9X.gif');
-  background-size: cover;
-  height: 100vh;
-  padding:0;
-  margin:0;
-  */
 }
 
 /*PlaceHolder text inside search bar*/
@@ -47,6 +40,7 @@ h2 {
   text-align: center;
 }
 
+/*Header used elsewhere, has different margin settings than h2*/
 h3 {
   background-size: cover;
   margin-top: 0vh;
@@ -59,7 +53,22 @@ h3 {
   text-align: center;
 }
 
+/*Sign Up/Sign In box Text*/
+h4
+{
+  padding-top: 3vh;
+  background-size: cover;
+  margin-bottom: 0vw;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5vw;
+  color:#5F2D38;
+  text-align: center;
+  margin-top: 2vh;
+}
 
+/*The text used above the search bar*/
 .textAboveSearch
 {
   background-size: cover;
@@ -67,14 +76,13 @@ h3 {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
-  /*font-size: 6.944vw;*/
   font-size: 6.2vw;
   color: #EAE3D1;
   text-align: center;
-  
   margin-bottom: .1vh;
 }
 
+/*CreatorConnect logo on the pop up modals*/
 .modalLogo
 {
   background-size: cover;
@@ -82,7 +90,6 @@ h3 {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
-  /*font-size: 6.944vw;*/
   font-size: 6.2vw;
   color: #5F2D38;
   text-align: center;
@@ -90,6 +97,7 @@ h3 {
   margin: 0;
 }
 
+/*container for text inside modals*/
 .modalText
 {
   margin: 0vh;
@@ -98,18 +106,14 @@ h3 {
   height: 50vh;
 }
 
-
-
+/*Text inside of modals*/
 .modalText p {
   font-size: 2.2vw;
   padding: 0;
   margin: 0;
 }
 
-.modalBtn
-{
-
-}
+/*Button inside modal*/
 .modalBtn button
 {
   width: 7vw;
@@ -120,6 +124,8 @@ h3 {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #5F2D38;
 }
+
+/*Hover-over for button inside modal*/
 .modalBtn button:hover
 {
   width: 7vw;
@@ -130,6 +136,8 @@ h3 {
   font-family: bebas-neue-by-fontfabric, sans-serif;
   background-color: #EAE3D1;
 }
+
+/*Button click css for modal buttons*/
 .modalBtn button:active
 {
   width: 7vw;
@@ -157,7 +165,6 @@ p {
   font-size: 2.22vw; /* Increase font-size */
   padding: .833vw .833vw .833vw 1.5vw; /* Add some padding */
   border: .069vw solid #ddd; /* Add a grey border */
-  /*margin-bottom: .833vw; /* Add some space below the input */
   border-radius: 0.694vw;
 }
 
@@ -233,142 +240,23 @@ ul{
 /*Defines "show" attribute for search bar functionality*/
 .show {display: block;}
 
-.login {
-  font-size: 2vw;
-  margin-left: 3.5vw;
-  margin-right: 1vw;
-  margin-top: 2vw;
-  line-height: 4vw;
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  color: #EAE3D1;
-}
-
-.loginbox{
-  background: #5F2D38;
-  border-radius: 0.694vw;
-  box-shadow: 0 0.278vw 0.556vw 0 rgba(0, 0, 0, 0.2);
-
-  width: 50vw;
-  height: 30vw;
-  margin-left: 25vw;
-  margin-right: 35vw;
-  margin-top: 10vw;
-  margin-bottom: 2vw;
-  padding-top: 1.2vw;
-  padding-bottom: 1.2vw;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-
-}
-
+/*Input boxes for sign up page*/
 .inputBox {
   margin-left: 5vw;
   margin-top: 2vh;
   width: 20vw;
   height: 4vh;
-
 }
 
-.signupbox{
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-  width: 13.2%;
-  border-radius: 0.45vw;
-  margin-bottom: 1.3vw;
-  margin-top: .2vw;
-  height: 2.5vw;
-  font-size:  1.8vw;
-  padding-left: .5vw;
-  align-content: center;
-  text-align: left;
-}
-
-legend{
-  display: block;
-  text-align: center;
-  width: fit-content;
-  line-height: 2vw;
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  font-size: 3vw;
-  color: #EAE3D1;
-  padding: 0 5px;
-}
-
-fieldset {
-  border: 1px solid #EAE3D1;
-  border-radius: 5px;
-  width: fit-content;
-  margin: auto;
-  margin-top: 4vw;
-}
-
-.skills
-{
-
-}
+/*this is so  there is no extra space around the html or body components*/
 html,body {
   margin:0;
   padding:0;
 }
+
+/*width of inputs on form*/
 input[type=checkbox] {
   width: 2vw;
-}
-
-#parent {
-  display: inline-block;
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  color:lightgray;
-  font-size: 2.4vw;
-  padding-bottom: 1.2vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-}
-#narrow {
-  /*float:left;
-  text-align: center;
-  /*width: 200px;*/
-
-  /* Just so it's visible */
-}
-#wide {
-  width: 200px;
-  /* Grow to rest of container */
-
-  /* Just so it's visible */
-}
-
-/*Wraps button*/
-.buttonWrapper {
-  text-align: center;
-  margin-top: 6.5vw;
-
-}
-/*CSS Buttons for launch page*/
-.customButton
-{
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  border-radius: 0.694vw;
-  background-color: #EAE3D1;
-  border: none;
-  color: #5F2D38;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-top: 2vw;
-  padding-bottom: 2vw;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 3vw;
-  width: 16.771vw;
-  height: 7.083vw;
-}
-
-.customButton:hover
-{
-  color: #EAE3D1;
-  background-color: #5F2D38;
-
 }
 
 /*Custom Div setup for left side of launch page*/
@@ -376,8 +264,6 @@ input[type=checkbox] {
 {
   width: 40vw;
   height: 100vh;
- /* display: flex;
-  justify-content: center;*/
 }
 
 /*Used to center Innovation Hub logo found at the center of the left side of the launch page*/ 
@@ -388,6 +274,7 @@ input[type=checkbox] {
   margin-top: 24.963vh;
 }
 
+/*Custom Div setup for right side of launch page*/
 .rightDiv
 {
   width: 60vw;
@@ -418,21 +305,7 @@ flex auto*/
   
 }
 
-/*Sign Up/Sign In box Text*/
-h4
-{
-  padding-top: 3vh;
-  background-size: cover;
-  margin-bottom: 0vw;
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 5vw;
-  color:#5F2D38;/*#EAE3D1;*/
-  text-align: center;
-  margin-top: 2vh;
-}
-
+/*The CreatorConnect logo inside of the sign up/log in form*/
 .launchText
 {
   padding-top: 3vh;
@@ -447,72 +320,24 @@ h4
   margin-top: 2vh;
 }
 
+/*centers the form*/
 .information
 {
-  /*background-color: white;*/
   width: 30vw;
   min-height: 60vh;
   margin-top: 0vh;
   margin-left: 5vw;
-  /*display: flex;
-  justify-content: flex-start;*/
 }
 
-.informationWrap
-{
-  display: flex;
-  align-items: row-reverse;
-}
-
-.trial
-{
-  width: 30vw;
-  margin-left: 4.5vw;
-  /*flex-direction: column;*/
-}
-
+/*centers the dropdown menus*/
 .dropdown
 {
   width: 20.5vw;
   margin-left: 2.5vw;
   margin-top: 1vh;
-  /*flex-direction: column;*/
 }
 
-.select_text{
-  font-size: 1vw !important;
-}
-
-.MuiInput-underline{
-  width: 20vw;
-}
-
-.inputBox_existing {
-  margin-left: 5vw;
-  margin-top: 2vh;
-  width: 20vw;
-  height: 4vh;
-
-}
-
-.fourohfour {
-  margin-top: 20vh;
-  font-size: 10vh;
-}
- .fourtext{
-   margin-top: 2vh;
- }
-
- .homeText:hover
- {
-   background-color: rgb(160, 75, 93);
-
- }
-
- .select_text{
-   font-size: 1vh;
- }
-
+/*navigation bar at the top of the page*/
  .topnav {
   position: absolute;
   width: 100vw;
@@ -520,12 +345,10 @@ h4
   overflow: none;
   background-color: #d3d3d3;
   font-family: bebas-neue-by-fontfabric, sans-serif;
-
 }
 
+/*link component for navigation bar at the top of the page*/
 .topnav a {
-  
-  
   color: #5F2D38;
   text-align: center;
   padding: .5vh;
@@ -533,40 +356,38 @@ h4
   text-decoration: none;  
 }
 
-
-
-.modal {
-  background-color: black;
-  color: #EAE3D1; 
-  
-}
-
+/*hover over component for link component of the navigation bar*/
 .topnav a:hover {
   background-color: #B5C2B7;
   color: black;
   height: 90%;
 }
 
+/*active component for link component of the navigation bar*/
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
 }
 
+/*hover over component for button component of the navigation bar*/
 .topnav button:hover {
   background-color: #B5C2B7;
   color: black;
   height: 7.5vh;
 }
 
+/*active component for button component of the navigation bar*/
 .topnav button.active {
   background-color: #4CAF50;
   color: white;
 }
 
-
+/*div component of navigation bar*/
 .topNav div {
   margin-left: 10vw;
 }
+
+/*logout component of navigation bar*/
 .logout {
   float: right;
   font-family: bebas-neue-by-fontfabric, sans-serif;
@@ -584,54 +405,20 @@ h4
   padding-right: .75vw;
   padding-left: .75vw;
 }
+
+/*wraps the form so the extra space at the top is not noticable*/
 .formWrap{
   background-color: #EAE3D1;
 }
-.support {
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  font-size: 5vh;
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  outline:none;
-  padding: .25vh;
-  color: #5F2D38;
-  padding-top: 3vh;
-  padding-right: .75vw;
-  
-  margin-top: 1vh;
-  margin-right: 41vw;
-}
 
-.emptyForm {
-  width: 0vw;
-  height: 0vh;
-}
-
-
-
-.teamBlurb{
-  border-radius: 0.694vw;
- 
-  background-color: #5F2D38;
-
-  
-  margin-top: 1vh;
-  
-  margin-left: 20vw;
-  width: 50vw;
-  height: 20vh;
-}
-
+/*determines size of team picture on the team tab*/
 .teamPics {
   max-width:100%;
-max-height:100%;
+  max-height:100%;
 }
 
+/*container for the left component of the navigation bar*/
 .leftNavBar {
-  
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-size: 5vh;
   background-color: Transparent;
@@ -647,23 +434,3 @@ max-height:100%;
   padding-right: .75vw;
   padding-left: .75vw;
 }
-
-
-.usersCount {
-  font-family: bebas-neue-by-fontfabric, sans-serif;
-  font-size: 5vh;
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  outline:none;
-  padding: .25vh;
-  margin: 0;
-  margin-top: 1vh;
-  margin-left: 45vw;
-  color: #5F2D38;
-  padding-right: .75vw;
-  padding-left: .75vw;
-}
-

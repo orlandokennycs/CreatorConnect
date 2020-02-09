@@ -22,7 +22,6 @@ var logged = 1
 /*declaration of the Launch class that will hold form data*/
 class Launch extends React.Component {}
 
-
 /*This function will be used to handle the form*/
 export default function MultipleSelect() {
   const existingUser = "Existing User? Click here"
@@ -41,7 +40,7 @@ export default function MultipleSelect() {
     skills: [],
     dateCreated: Date()
   }
-
+ 
   /*Trigger buttons that use hooks to either show or hide the login/signup option*/
   function triggerRegistration() {hideRegistration(!registration)}
   function triggerLogin() {setLogin(!login)}
@@ -55,6 +54,9 @@ export default function MultipleSelect() {
       setButton(existingUser)
     }
   }
+
+
+  
 
   return (
     <div>
@@ -226,7 +228,7 @@ export default function MultipleSelect() {
                 </form>} 
                 
                 {/*button that triggers between the new user and the existing user forms*/}
-                <button className="inputBox_existing" onClick={() => {
+                <button className="inputBox" onClick={() => {
                   triggerRegistration();
                   triggerLogin();
                   triggerButton();

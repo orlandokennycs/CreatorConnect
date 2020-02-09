@@ -20,7 +20,7 @@ def createNewUser():
     global existentUser
     document = request.form.to_dict()
     name = document['firstName'] + ' ' + document['lastName']
-    emailEntered = document['fsuEmail']
+    emailEntered = document['fsuEmail'].lower()
     # TODO: Add verification for fsu.edu email // also email existence module 
 
     user = mongo.db.users.find_one({'email': emailEntered})
@@ -34,7 +34,7 @@ def createNewUser():
         wrongPassword = False
         nonexistentUser = False
         existentUser = False
-        mongo.db.users.insert_one({'name': name, 'email': document['fsuEmail'], 'hashedPassword': hashedPassword, 'gradYear': document['gradYear'], 'skills': skillsArray})
+        mongo.db.users.insert_one({'name': name, 'email': document['fsuEmail'].lower(), 'hashedPassword': hashedPassword, 'gradYear': document['gradYear'], 'skills': skillsArray})
         user = mongo.db.users.find_one({'email': emailEntered})
         session['username'] = user['name']
         return redirect("http://localhost:3000/cards")
@@ -51,7 +51,7 @@ def login():
   global existentUser
   if request.method == 'POST': 
     document = request.form.to_dict()
-    emailEntered = document['fsuEmail']
+    emailEntered = document['fsuEmail'].lower()
     passwordEntered = document['password']
     
     user = mongo.db.users.find_one({'email': emailEntered})
