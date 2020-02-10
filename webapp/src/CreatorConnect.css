@@ -175,7 +175,7 @@ p {
   width: 25%;
   height: 5%;
   max-width: 27.778vw;
-  max-height: 34.722vw;
+  max-height: 36vw;
   margin-left: 6vw;
   margin-top: 2vw; /*NOTES*/
   margin-bottom: 2vw;
@@ -232,6 +232,7 @@ ul{
 
 /*Container for cards in order to use flexbox*/
 .cards-container {
+  margin-top: 1vh;
   width:100%;
   display: flex;
   flex-flow: wrap;
@@ -250,6 +251,8 @@ ul{
 
 /*this is so  there is no extra space around the html or body components*/
 html,body {
+  overflow-x: hidden; 
+  overflow-y: scroll; 
   margin:0;
   padding:0;
 }
@@ -347,8 +350,15 @@ flex auto*/
   font-family: bebas-neue-by-fontfabric, sans-serif;
 }
 
-@media only screen and (max-width: 375px)
+@media only screen and (max-width: 416px)
 {
+  html,body {
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+    margin:0;
+    padding:0;
+  }
+
   .logout {
     float: right;
     font-family: bebas-neue-by-fontfabric, sans-serif;
@@ -411,12 +421,188 @@ padding-left:10vw !important;
 
   }
 
+/*The text used above the search bar*/
+.textAboveSearch
+{
+  background-size: cover;
+  margin-top: 12vh;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13vw;
+  color: #EAE3D1;
+  text-align: center;
+  margin-bottom: .1vh;
+}
 
+/*Input for search bar styling*/
+#myInput {
+  text-align: left;
+  align-content: center;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  width: 78%; /* Full-width */
+  height: 4vh;
+  font-size: 5vw; /* Increase font-size */
+  padding: .833vw qvw .833vw .833vw;/* Add some padding */
+  border: .069vw solid #ddd; /* Add a grey border */
+  border-radius: 0.694vw;
+}
+
+/*Cards*/
+.card {
+  border-radius: 0.694vw;
+  box-shadow: 0 0.278vw 0.556vw 0 rgba(0, 0, 0, 0.2);
+  width: 50%;
+  height: 10%;
+  max-width: 36vw;
+  max-height: 60vw;
+  margin-left: 6vw;
+  margin-top: 2vw; /*NOTES*/
+  margin-bottom: 2vw;
+  padding-top: .2vw;
+  padding-bottom: .2vw;
+  background: #EAE3D1;
+  padding-left: .25rem;
+}
+
+.cards-container {
+  margin-left: 4vw;
+  width:100%;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.name {
+  margin-bottom:-1.389vw;
+  margin-left: 2.431vw;
+  margin-right: 1vw;
+  text-align: left;
+  color: #5F2D38;
+  font-size: 7vw;
+}
+
+/*User email address*/
+.email {
+  margin-right: 2vw;
+  margin-left: 2.569vw;
+  line-height: 0px;
+  padding: 0px;
+  color: #5F2D38;
+  font-size: 4.784vw;
+}
+
+/*Skills section "header"*/
+.skillsHead {
+  margin-left: 2.569vw;
+  padding-top: .4vw;
+  color: #5F2D38;
+  font-size: 5.6vw;
+  margin-bottom:-0.694vw;
+}
+
+ul{
+  margin: 0vw;
+  list-style-type: none;
+}
+
+/*Items in the skills area*/
+.skillsArr{
+  margin-left: -7vw;
+  line-height: 0.347vw;
+  color: #5F2D38;
+  font-size: 4vw;
+  margin-bottom: 1vh;
+}
+
+
+/*CreatorConnect logo on the pop up modals*/
+.modalLogo
+{
+  background-size: cover;
+  margin-top: 0vh;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11.5vw;
+  color: #5F2D38;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/*container for text inside modals*/
+.modalText
+{
+  margin-top: .5vh;
+  margin-left: 1vw;
+  width: 60vw;
+  height: 50vh;
+}
+
+/*Text inside of modals*/
+.modalText p {
+  font-size: 5.8vw;
+  padding: 0;
+  margin: 0;
+}
+
+/*Button inside modal*/
+.modalBtn button
+{
+  width: 15vw;
+  height: 6vh;
+  padding: .25vw;
+  border-radius: 1vw;
+  font-size: 6vw;
+  margin-left: 0vw;
+  margin-top: 0vh;
+  margin-bottom: 1vh;
+  color: #EAE3D1;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #5F2D38;
+}
+
+/*Hover-over for button inside modal*/
+.modalBtn button:hover
+{
+  width: 7vw;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 2vw;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*Button click css for modal buttons*/
+.modalBtn button:active
+{
+  width: 7vw;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 2vw;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*determines size of team picture on the team tab*/
+.teamPics {
+  margin-top: 5vh;
+  max-width:100%;
+  max-height:100%;
+}
 
 }
 
-@media only screen and (max-width: 1136px)
+@media only screen and (max-width: 1136px) and (min-width: 416px)
 {
+  html,body {
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+    margin:0;
+    padding:0;
+  }
   .topnav {
    position: absolute;
    width: 100vw;
@@ -470,14 +656,166 @@ padding-left:10vw !important;
 .textAboveSearch
 {
   background-size: cover;
-  margin-top: 20vh;
+  margin-top: 15vh;
   font-family: bebas-neue-by-fontfabric, sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 6.2vw;
+  font-size: 10vw;
   color: #EAE3D1;
   text-align: center;
   margin-bottom: .1vh;
+}
+
+/*Input for search bar styling*/
+#myInput {
+  text-align: left;
+  align-content: center;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  width: 60%; /* Full-width */
+  height: 3vh;
+  font-size: 3vw; /* Increase font-size */
+  padding: .833vw .833vw .833vw .833vw;/* Add some padding */
+  border: .069vw solid #ddd; /* Add a grey border */
+  border-radius: 0.694vw;
+}
+
+/*Cards*/
+.card {
+  border-radius: 0.694vw;
+  box-shadow: 0 0.278vw 0.556vw 0 rgba(0, 0, 0, 0.2);
+  width: 50%;
+  height: 10%;
+  max-width: 27.778vw;
+  max-height: 36vw;
+  margin-left: 6vw;
+  margin-top: 2vw; /*NOTES*/
+  margin-bottom: 2vw;
+  padding-top: .2vw;
+  padding-bottom: .2vw;
+  background: #EAE3D1;
+  padding-left: .25rem;
+}
+
+.cards-container {
+  margin-left: 12vw;
+  width:100%;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.name {
+  margin-bottom:-1.389vw;
+  margin-left: 2.431vw;
+  margin-right: 1vw;
+  text-align: left;
+  color: #5F2D38;
+  font-size: 5vw;
+}
+
+/*User email address*/
+.email {
+  margin-right: 1vw;
+  margin-left: 2.569vw;
+  line-height: 0px;
+  padding: 0px;
+  color: #5F2D38;
+  font-size: 2.99vw;
+}
+
+/*Skills section "header"*/
+.skillsHead {
+  margin-left: 2.569vw;
+  padding-top: .4vw;
+  color: #5F2D38;
+  font-size: 3.5vw;
+  margin-bottom:-0.694vw;
+}
+
+/*Items in the skills area*/
+.skillsArr{
+  margin-left: -0.347vw;
+  line-height: 0.347vw;
+  color: #5F2D38;
+  font-size: 2.5vw;
+  margin-bottom: 1vh;
+}
+
+/*CreatorConnect logo on the pop up modals*/
+.modalLogo
+{
+  background-size: cover;
+  margin-top: 0vh;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10vw;
+  color: #5F2D38;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/*container for text inside modals*/
+.modalText
+{
+  margin: 0vh;
+  margin-left: 14vw;
+  width: 60vw;
+  height: 50vh;
+}
+
+/*Text inside of modals*/
+.modalText p {
+  font-size: 4.5vw;
+  padding: 0;
+  margin: 0;
+}
+
+/*Button inside modal*/
+.modalBtn button
+{
+  width: 10vw;
+  height: 5vh;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 4vw;
+  margin-left: 2vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  color: #EAE3D1;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #5F2D38;
+}
+
+/*Hover-over for button inside modal*/
+.modalBtn button:hover
+{
+  width: 7vw;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 2vw;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*Button click css for modal buttons*/
+.modalBtn button:active
+{
+  width: 7vw;
+  padding: .25vw;
+  border-radius: .5vw;
+  font-size: 2vw;
+  color: #5F2D38;
+  font-family: bebas-neue-by-fontfabric, sans-serif;
+  background-color: #EAE3D1;
+}
+
+/*determines size of team picture on the team tab*/
+.teamPics {
+  margin-top: 5vh;
+  max-width:100%;
+  max-height:100%;
 }
 
 }

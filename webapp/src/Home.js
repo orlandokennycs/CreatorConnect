@@ -24,7 +24,7 @@ const STYLE = {
   },
   SLI:
   {
-    fontSize: "2.0em"
+    fontSize: "1.4em"
   }
 }
 
@@ -39,8 +39,6 @@ class Home extends React.Component {
       sptModalIsOpen: false,
       ftrModalIsOpen: false,
       teamModalIsOpen: false,
-
-
     };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
