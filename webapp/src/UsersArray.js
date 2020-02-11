@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import './CreatorConnect.css';
 
+/*This class is used to fetch the users from the allRandUsers endpoint and throw back card elements*/
 class UsersArray extends React.Component {
   
   constructor() {
@@ -11,19 +12,17 @@ class UsersArray extends React.Component {
     };
   }
 
+  //connects to the endpoint and parses its response to then set this.state's data value to the response.
   componentDidMount() {
-    fetch('http://127.0.0.1:5000/allUsers')
+    fetch('http://127.0.0.1:5000/allRandUsers')
     .then(results => results.json())
     .then(response => {
       this.setState({data: response.data});
     })
   }
-  
+
+  //runs a sudo for loop to iterate through the list of users it was given
   render() {
-    const userCount = this.state.data.map((user) => console.log("")).length;
-    console.log(userCount)
-    window.count=userCount
-  
     return(
       this.state.data.map((user, i) => {
         return(

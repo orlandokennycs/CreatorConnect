@@ -30,6 +30,8 @@ const STYLE = {
 
 class Home extends React.Component {
   constructor() {
+    /*keyUpHandler in the search bar is binded so that serch results are fed as they come up in real time
+    the openModal features are a part of react's modal class used for "pop up boxes"*/
     super();
     this.handleSearch = this.keyUpHandler.bind(this, 'search')
     this.state = {
@@ -62,6 +64,7 @@ class Home extends React.Component {
     const axiosWithCookies = axios.create({
       withCredentials: true
     });
+    //connects to the login endpoint and reads the session cookie to see if the user is logged in to gain access to the cards page
     axiosWithCookies.get(`http://localhost:5000/login`)
         .then((response) => {
             this.setState({
@@ -70,6 +73,7 @@ class Home extends React.Component {
         }).catch((error) => {
             console.error(error);
         });
+    //connects to the usercount endpoint to get the user count displayed in the 
     axios.get(`http://localhost:5000/userCount`)
         .then((response) => {
             this.setState({
@@ -78,11 +82,10 @@ class Home extends React.Component {
         }).catch((error) => {
             console.error(error);
         });
-
   }
 
+  //handles the real time serach bar and hides cards that do not correspond to the search query
   keyUpHandler(refName, e) {
-    console.log(window.count)
     var input, filter;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
@@ -110,16 +113,14 @@ class Home extends React.Component {
         }
   }
 
-
-
+  //the following four sets of openModal and closeModal all set the modalIsOpen state to either be true or false
+  //this state is then used to determine if to open the modal or close the modal
+  //this is done by the modal class. NOTE- The afterOpenModal function can be used to activate an animation
   openModal() {
     this.setState({modalIsOpen: true});
   }
 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-
-  }
+  afterOpenModal() {}
 
   closeModal() {
     this.setState({modalIsOpen: false});
@@ -129,10 +130,7 @@ class Home extends React.Component {
     this.setState({sptModalIsOpen: true});
   }
 
-  sptAfterOpenModal() {
-    // references are now sync'd and can be accessed.
-
-  }
+  sptAfterOpenModal() {}
 
   sptCloseModal() {
     this.setState({sptModalIsOpen: false});
@@ -142,10 +140,7 @@ class Home extends React.Component {
     this.setState({ftrModalIsOpen: true});
   }
 
-  ftrAfterOpenModal() {
-    // references are now sync'd and can be accessed.
-
-  }
+  ftrAfterOpenModal() {}
 
   ftrCloseModal() {
     this.setState({ftrModalIsOpen: false});
@@ -155,25 +150,34 @@ class Home extends React.Component {
     this.setState({teamModalIsOpen: true});
   }
 
-  teamAfterOpenModal() {
-    // references are now sync'd and can be accessed.
-
-  }
+  teamAfterOpenModal() {}
 
   teamCloseModal() {
     this.setState({teamModalIsOpen: false});
   }
 
-  render() {
+  /*This class is internally conditionally rendered based on the code given by the login endpoint.
+    The implementation is nested in a set of True or False conditionals.
+    i.e. if data = 0 render 0, if not render 1... if data is 1 render 1, if not render 2.
+    Through this process we are implicitly creating the equivalent to an if statement with AND and OR
+    the reason for this is simplicity and visibility since we are returning html components.
 
+    RESPONSES FROM /login ENDPOINT
+      0 = logged in 
+      1 = User with email entered already exists
+      2 = Wrong Password
+      3 = User with that email does not exist
+      5 = logged out
+      any other int = an unkown internal server error*/
+
+  render() {
     return this.state.data === 0 ?
     (
       <div> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
-      { }
 
       <div class="topnav">
         <form className="formWrap" action='http://localhost:5000/logout' method = 'POST' >
-          <a href="#home"><button className = "logout" type="submit">Logout</button></a>
+          <button className = "logout" type="submit">Logout</button>
         </form>
         <button className="leftNavBar about" onClick={this.openModal}>&nbsp;ABOUT </button>
         <Modal
@@ -196,7 +200,6 @@ class Home extends React.Component {
             </p>
           </div>
         </Modal>
-       {/* <a href="http://www.google.com" target="_blank" className="support">FEEDBACK</a>*/}
 
         <button className="leftNavBar " onClick={this.teamOpenModal}>&nbsp;TEAM </button>
         <Modal
@@ -233,13 +236,7 @@ class Home extends React.Component {
         </Modal>
 
         <button className="leftNavBar feedback"><a href="https://forms.gle/j19asMDP9VCjtQMDA" target="_blank">FEEDBACK</a></button>
-
-
       </div>
-
-
-
-
 
         <h2 className="textAboveSearch"><span style={STYLE.SPAN}>C</span>reator<span style={STYLE.SPAN}>C</span>onnect<span style={STYLE.BETA}>BETA</span></h2>
         <div class="parent">
@@ -252,7 +249,6 @@ class Home extends React.Component {
     )
     :
     (
-
       this.state.data === 5 ?
       (
         <div> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
@@ -297,24 +293,16 @@ class Home extends React.Component {
             )
             :
             (
-
                 <div> {/* DO NOT REMOVE THIS DIV COMPONENT*/}
                 {
                 alert("An unkown error occured. Please contact support. You will now be redirected to the launch page.")
                 }
                 <Redirect to={{pathname: "/",}}/>
                 </div>
-
-
             )
           )
         )
-
       )
-
-
-
-
     )
   }
 }

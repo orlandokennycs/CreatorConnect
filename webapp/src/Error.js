@@ -19,16 +19,8 @@ const STYLE = {
   },
 }
 
-/*function HomeButton() {
-  let history = useHistory();
-  history.push('/');
-};*/
+/*This class is used to render a 404 error when the user tries to access a nonexistent link*/
 class Error extends React.Component {
-  /*
-  Component Composition
-  Declarative UI
-  event -> state change -> re-render
-  */
   state = {
     toLaunch: false,
   }
@@ -51,11 +43,8 @@ class Error extends React.Component {
         <div className = "fourohfour">
           <h2 className="textAboveSearch"><span style={STYLE.SPAN}>404</span> Error</h2>
           <h2><span style={STYLE.NAPS}>We couldn't find that page!</span> </h2>
-          
             <h3 className="homeText" onClick={this.handleSubmit}>home</h3>
-         
         </div>
-      
       {/* DO NOT REMOVE THIS DIV COMPONENT*/}</div>
       )
   }

@@ -18,7 +18,7 @@ const STYLE = {
     fontSize: ".25em"
   }
 }
-var logged = 1
+
 /*declaration of the Launch class that will hold form data*/
 class Launch extends React.Component {}
 
@@ -26,7 +26,8 @@ class Launch extends React.Component {}
 export default function MultipleSelect() {
   const existingUser = "Existing User? Click here"
   const newUser = "New User? Click Here"
-  const boolArray = [true, false]
+  //react hooks are used in a rather unconventional manner here. Allows for uniform asynchrenous functionality later on
+  const boolArray = [true, false]  
   const [registration, hideRegistration] = useState(boolArray[0]);
   const [login, setLogin] = useState(boolArray[1]);
   const [button, setButton] = useState(existingUser);
@@ -38,7 +39,7 @@ export default function MultipleSelect() {
     password: ' ',
     gradDate: ' ',
     skills: [],
-    dateCreated: Date()
+    dateCreated: Date()     //add a timestamp going forward
   }
  
   /*Trigger buttons that use hooks to either show or hide the login/signup option*/
@@ -55,9 +56,6 @@ export default function MultipleSelect() {
     }
   }
 
-
-  
-
   return (
     <div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
@@ -73,13 +71,13 @@ export default function MultipleSelect() {
               <div className="informationWrap">
               <div className = "information">
 
-              {/*first form, the new user method:POST action = 'http://127.0.0.1:5000/newUser' method = 'POST'*/}
+              {/*first form, the new user form*/}
               {registration && <form action = 'http://localhost:5000/register' method = 'POST'>
                   <input required className="inputBox" type="text" name="firstName" placeholder="First Name" ref={input => newUserData.firstName = input}></input>
                 
                   <input required className="inputBox" type="text" name="lastName" placeholder="Last Name" ref={input => newUserData.lastName = input}></input>
                 
-                  <input required className="inputBox" type="email" name="fsuEmail" placeholder="FSU E-mail" pattern=".+@.+fsu.edu"  ref={input => newUserData.email = input}></input>
+                  <input required className="inputBox" type="email" name="fsuEmail" placeholder="FSU E-mail (lowercase)" pattern=".+@.+.fsu.edu"  ref={input => newUserData.email = input}></input>
              
                   <input required className="inputBox" type="password" name="password" placeholder="Password" ref={input => newUserData.password = input}></input>
                 
@@ -97,7 +95,8 @@ export default function MultipleSelect() {
                       <option value="2026">2026</option>
                   </select>
                 </div>
-                  {/*MAKE ALPHABETICALLY INSENSITIVE*/}
+
+                  {/*FORCE LOWERCASE INPUT GOING FORWARD*/}
                   <div className="dropdown">
                     <select required name="firstSkill" class="ui fluid dropdown">
                       <option value="">Skill #1 (REQUIRED)</option>
@@ -222,7 +221,7 @@ export default function MultipleSelect() {
 
                 {/*second form, the existing user form*/}
                 {login && <form action = 'http://localhost:5000/login' method = 'POST'>
-                  <input required className="inputBox" type="text" name="fsuEmail" placeholder="FSU E-mail"></input>
+                    <input required className="inputBox" type="text" name="fsuEmail" placeholder="FSU E-mail"></input>
                   <input required className="inputBox" type="password" name="password" placeholder="Password"></input>
                   <button className="inputBox" type="submit">Log In</button>
                 </form>} 
