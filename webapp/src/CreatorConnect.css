@@ -251,8 +251,8 @@ ul{
 
 /*this is so  there is no extra space around the html or body components*/
 html,body {
-  overflow-x: hidden; 
-  overflow-y: scroll; 
+  overflow-x: hidden;
+  overflow-y: scroll;
   margin:0;
   padding:0;
 }
@@ -352,13 +352,43 @@ flex auto*/
 
 @media only screen and (max-width: 416px)
 {
+
   html,body {
-    overflow-x: hidden; 
-    overflow-y: scroll; 
+    overflow-x: hidden;
+    overflow-y: scroll;
     margin:0;
     padding:0;
   }
+  .leftDiv
+  {
+    display:none !important;
+  }
 
+  .signUpOrIn
+  {
+    background-color: #EAE3D1;
+    width: 80vw;
+    min-height: 80vh;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    border-radius: 0.694vw;
+    flex: auto;
+    padding-bottom: 5vh;
+  }
+
+  .inputBox
+  {
+    margin-top: 2vw;
+    display: block;
+    width: 57vw !important;
+  }
+
+  .dropdown
+  {
+    width: 50.5vw !important;
+    margin-left: 2.5vw;
+    margin-top: 1vh;
+}
   .logout {
     float: right;
     font-family: bebas-neue-by-fontfabric, sans-serif;
@@ -592,14 +622,14 @@ ul{
   max-width:100%;
   max-height:100%;
 }
-
+/*END OF MEDIA */
 }
 
 @media only screen and (max-width: 1136px) and (min-width: 416px)
 {
   html,body {
-    overflow-x: hidden; 
-    overflow-y: scroll; 
+    overflow-x: hidden;
+    overflow-y: scroll;
     margin:0;
     padding:0;
   }
