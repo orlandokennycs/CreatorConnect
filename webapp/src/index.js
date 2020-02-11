@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './CreatorConnect.css';
 import { Redirect, Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
 import {render} from 'react-dom';
-
 import * as serviceWorker from './serviceWorker';
 import Home from './Home';
 import UsersArray from './UsersArray';
@@ -22,6 +21,7 @@ const routing = (
     </Switch>
   </Router>
 )
+
 //the code below reads the path and renders component on a conditional basis. i.e. /home throws two different components at different places...
 ReactDOM.render(routing, document.getElementById("root"));
 serviceWorker.unregister();

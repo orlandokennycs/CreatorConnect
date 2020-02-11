@@ -13,6 +13,7 @@ def userCount():
     totalUsers = mongo.db.users.count()
     return Response(200, totalUsers).serialize()
 # /users
+
 @app.route('/users')
 def listUsers():
     # Search for first 10 users and typecast to list
@@ -44,20 +45,20 @@ def listAllUsers():
     # Return new response object formatted with users
     return Response(200, users).serialize()
 
+# /randUsers
+@app.route('/allRandUsers')
+def listRandomUsers():
+    # Search for random users and typecast to list
+    numUsers = mongo.db.users.count()
+    users = list(mongo.db.users.aggregate([ { "$sample": { "size": numUsers } } ]))
+
+    # Return new response object formatted with users
+    return Response(200, users).serialize()
 
 # /users/<count>
 @app.route('/users/<int:count>')
 def listUserCount(count):
     users = list(mongo.db.users.find({}).limit(count))
-    return Response(200, users).serialize()
-
-# /randUsers
-@app.route('/randUsers')
-def listRandomUsers():
-    # Search for random 5 users and typecast to list
-    users = list(mongo.db.users.aggregate([ { "$sample": { "size": 5 } } ]))
-
-    # Return new response object formatted with users
     return Response(200, users).serialize()
 
 # /getUser/<username>

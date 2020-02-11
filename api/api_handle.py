@@ -8,10 +8,10 @@ import time
 
 app.secret_key = 'mysecret' 
 
+#global booleans that will keep track of errors
 wrongPassword = False 
 nonexistentUser = False
 existentUser = False
-alreadyLoggedIn = False
 
 @app.route('/register', methods=['POST'])
 def createNewUser():
@@ -23,6 +23,7 @@ def createNewUser():
     emailEntered = document['fsuEmail'].lower()
     # TODO: Add verification for fsu.edu email // also email existence module 
 
+    #search to see if a user with this email already exists
     user = mongo.db.users.find_one({'email': emailEntered})
 
     rawPassword = document['password']
@@ -30,6 +31,7 @@ def createNewUser():
     hashedPassword = bcrypt.hashpw(rawPassword.encode('utf8'), bcrypt.gensalt())
     skillsArray = [document['firstSkill'], document['secondSkill'], document['thirdSkill'], document['fourthSkill'], document['fifthSkill']]
 
+    #based on the response send through, booleans explain the routes
     if user is None:
         wrongPassword = False
         nonexistentUser = False
@@ -54,8 +56,10 @@ def login():
     emailEntered = document['fsuEmail'].lower()
     passwordEntered = document['password']
     
+    #search for email in DB
     user = mongo.db.users.find_one({'email': emailEntered})
-  
+
+    #based on the response send through, booleans explain the routes
     if user is None:
         wrongPassword = False
         nonexistentUser = True
@@ -66,7 +70,7 @@ def login():
             wrongPassword = False
             nonexistentUser = False
             existentUser = False
-            session['username'] = user['name']
+            session['username'] = user['name'] #signs user in
             return redirect("http://localhost:3000/cards")
         else:
             wrongPassword = True
@@ -100,11 +104,13 @@ def login():
         existentUser = False
         return "5"
 
+#endponint to log user out using session.pop
 @app.route('/logout', methods=['POST'])
 def logout():
   session.pop('username')
   return redirect("http://localhost:3000/")
 
+#experimental endpoint to avoid sending logged in users to the launch page
 @app.route('/isLoggedIn', methods=['GET'])
 def isLoggedIn():
   if 'username' in session:
