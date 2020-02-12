@@ -1,12 +1,14 @@
 # CreatorConnect
 
-CreatorConnect is a program provided by the Florida State University Innovation Hub to allow students with technical and innovative skills to advertise their skills to the FSU community and employers for the purpose of accessing enriching opportunities that include engaging on projects, internships, tutoring, and employment. Currently the program is in the developmental phase and over the summer we created a prototype for it. The CreatorConnect prototype
+CreatorConnect is a web app hosted by the Florida State University Innovation Hub to allow students with technical and innovative skills to advertise their skills to the FSU community and employers for the purpose of accessing enriching opportunities that include engaging on projects, internships, tutoring, and employment. Currently the program is in the developmental phase and over the fall of 2019 we created a beta version for it. The CreatorConnect beta version 
 
-- Used a Google Form as a sign-up sheet for potential users and linked it to a Google Sheets spreadsheet. 
-- Used Python, Sheets API, and MongoDB API to pull spreadsheet data and upload it to a MongoDB server.
-- Used Node.js and pug to retrieve the data from the MongoDB server and present it as a dynamic web application.
+* Uses MongoDB as a relational database.
+* Uses Flask to host a secure backend server with multiple endpoints.
+* Uses ReactJS to host a web app that connects to the Flask endpoints in order to process data.
+* Uses ReactJS to dynamically render HTML components based on the endpoint’s response. 
+* Uses CSS techniques to allow for access and compatibility on all devices.
 
-Currently, we are working to develop an end product for the service. We are creating a web application where all data is collected and processed in-house. We expect to release the web application to the public in January 2020.
+Currently, we are working with a focus group to see which features they would like to see implemented into the public release version of the web app. We expect this beta period to last six weeks after which the beta will be taken down and the consumer application will be set to debut. The consumer application will be released on April 1, 2020.
 
 
 ## API
