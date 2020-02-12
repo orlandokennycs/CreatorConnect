@@ -23,9 +23,7 @@ else:
 
 # Init Flask App
 app = Flask(__name__)
-app.config['DEBUG'] = True
-app.config['SESSION_COOKIE_HTTPONLY'] = False
-app.config['SESSION_REFRESH_EACH_REQUEST'] = False
+
 
 cors(app, origins=["http://localhost:3000"], headers=['Content-Type'], expose_headers=['Access-Control-Allow-Origin'], supports_credentials=True)
 
@@ -56,4 +54,4 @@ if __name__ == '__main__':
     app.secret_key = 'mysecret'
     
 
-    app.run(host="localhost", port=8000, debug=True)
+    
